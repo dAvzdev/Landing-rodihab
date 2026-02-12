@@ -233,8 +233,6 @@ header img {
 
 /* -------------------- SCROLLYTELLING FASES -------------------------*/
 
-/* -------------------- SCROLLYTELLING FASES (CORREGIDO) -------------------------*/
-
 #fases-contenedor {
     background: var(--secondary);
     color: var(--white);
@@ -500,6 +498,165 @@ header img {
     color: var(--primary); 
     font-weight: 700; 
     font-size: 0.9rem; 
+}
+
+/* Animación de entrada para elementos al hacer scroll */
+.stat-item, .form-container {
+    view-timeline-name: --reveal;
+    view-timeline-axis: block;
+    animation: reveal linear both;
+    animation-range: entry 10% cover 30%;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: block;
+}
+
+/* Estilo del Formulario */
+#rehab-form {
+    background: var(--bg-light);
+    padding: 3rem;
+    border-radius: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#rehab-form input, #rehab-form select, #rehab-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-family: inherit;
+}
+
+
+/* Ocultar los inputs de radio */
+input[name="testimonial"] {
+    display: none;
+}
+
+.testimonial-wrapper {
+    position: relative;
+    height: 350px; /* Ajusta según el contenido */
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s ease-in-out;
+    background: var(--bg-light);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+/* Lógica de visualización */
+#t1:checked ~ .testimonial-wrapper .item-1,
+#t2:checked ~ .testimonial-wrapper .item-2,
+#t3:checked ~ .testimonial-wrapper .item-3 {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+}
+
+.autor {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.autor strong { color: var(--primary); font-size: 1.2rem; }
+
+/* Estilo de los puntitos */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slider-dots label {
+    width: 12px;
+    height: 12px;
+    background: #cbd5e1;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#t1:checked ~ .slider-dots label[for="t1"],
+#t2:checked ~ .slider-dots label[for="t2"],
+#t3:checked ~ .slider-dots label[for="t3"] {
+    background: var(--primary);
+    width: 30px;
+    border-radius: 10px;
+}
+
+
+.faq-wrapper {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+details {
+    background: var(--bg-light);
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+summary {
+    padding: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none; /* Oculta la flecha por defecto */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+summary::after {
+    content: "＋";
+    color: var(--primary);
+    transition: transform 0.3s;
+}
+
+details[open] summary::after {
+    transform: rotate(45deg); /* Convierte el + en x */
+}
+
+details p {
+    padding: 0 1.5rem 1.5rem;
+    color: #64748b;
 }
 
 /* ----------------------- FOOTER ------------------------------- */
