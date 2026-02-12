@@ -2,136 +2,185 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Rodihab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodihab | Especialistas en Rodilla</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/favicons/favicon-32x32.png">
-    <link rel="icon" href="assets/favicons/favicon-192x192.png">
 </head>
 <body>
     
-    <header>
-        <div class="container">
-            <h1><a href="index.html"><img src="assets/images/logo.png" alt="Rodihab Fisioterapia"></a></h1>
-
-            <nav>
-                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-                
-                <label for="menu-toggle" class="menu-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu">
-                        <path d="M4 5h16"/>
-                        <path d="M4 12h16"/>
-                        <path d="M4 19h16"/>
-                    </svg>
-                </label>
-
-                <ul class="nav-links">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Planes</a></li>
-                    <li><a href="#">Sobre rodihab</a></li>
-                    <li><a href="#">Preguntas frecuentes</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <ul class="hero-slider">
-                <li></li> <li></li> <li></li> <li></li> 
+<header>
+    <div class="container">
+        <h1>
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="Rodihab Fisioterapia">
+            </a>
+        </h1>
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 5h16"/>
+                    <path d="M4 12h16"/>
+                    <path d="M4 19h16"/>
+                </svg>
+            </label>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Planes</a></li>
+                <li><a href="#">Sobre rodihab</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Blog</a></li>
             </ul>
+        </nav>
+    </div>
+</header>
 
-            <div class="container">
-                <h2>Rehabilitación online de rodilla especializada en ligamento cruzado anterior</h2>
-                <p class="hero-subtitle">Recupérate desde donde quieras, con programas basados en ciencia y supervisión diaria de tu fisioterapeuta</p>
-                <a href="#planes" class="btn btn-primary">Empezar mi recuperación</a>
-            </div>
-        </section>
+<div class="global-progress-bar"></div>
 
-        <section id="fases-contenedor">
-            <div class="sticky-wrapper">
-                <h2 class="section-title">Tu camino a la recuperación</h2>
-                
-                <div class="horizontal-track">
-                    
-                    <div class="fase-card">
-                        <div class="fase-content">
-                            <span class="fase-num">01</span>
-                            <h3>Post-operatorio</h3>
-                            <p>Recuperar movilidad y empezar a ganar funcionalidad.</p>
-                        </div>
-                        <img src="assets/images/1.jpg" alt="Fase 1">
-                    </div>
+<main>
 
-                    <div class="fase-card">
-                        <div class="fase-content">
-                            <span class="fase-num">02</span>
-                            <h3>Fortalecimiento</h3>
-                            <p>Trabajo de fuerza y estabilidad lumbopélvica.</p>
-                        </div>
-                        <img src="assets/images/2.jpg" alt="Fase 2">
-                    </div>
-
-                    <div class="fase-card">
-                        <div class="fase-content">
-                            <span class="fase-num">03</span>
-                            <h3>Readaptación</h3>
-                            <p>Ejercicios de impacto y gestos deportivos.</p>
-                        </div>
-                        <img src="assets/images/3.jpg" alt="Fase 3">
-                    </div>
-
-                    <div class="fase-card">
-                        <div class="fase-content">
-                            <span class="fase-num">04</span>
-                            <h3>Vuelta al deporte</h3>
-                            <p>Entrenamiento específico y prevención.</p>
-                        </div>
-                        <img src="assets/images/4.jpg" alt="Fase 4">
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="servicios" class="bg-light">
-            <div class="container">
-                <div class="services-grid">
-                    <article class="service-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>
-                        <h3>Basado en ciencia</h3>
-                        <p>Siguiendo las guías de práctica clínica internacionales (KNGF, Aspetar).</p>
-                    </article>
-                    
-                    <article class="service-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="m16 19 2 2 4-4"/></svg>
-                        <h3>Seguimiento real</h3>
-                        <p>Contacto directo con tu fisio online con respuesta en menos de 24h.</p>
-                    </article>
-
-                    <article class="service-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/></svg>
-                        <h3>Retorno seguro</h3>
-                        <p>Criterios objetivos en cada fase basados en recomendaciones de expertos.</p>
-                    </article>
-
-                    <article class="service-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
-                        <h3>Flexibilidad total</h3>
-                        <p>Entrena donde y cuando quieras desde casa o tu gimnasio.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
+    <!-- HERO -->
+    <section class="hero">
+        <ul class="hero-slider">
+            <li><img src="assets/images/1.jpg" class="fase-img" alt="Fase 1"></li>
+            <li><img src="assets/images/2.jpg" class="fase-img" alt="Fase 2"></li>
+            <li><img src="assets/images/3.jpg" class="fase-img" alt="Fase 3"></li>
+            <li><img src="assets/images/4.jpg" class="fase-img" alt="Fase 4"></li> 
+        </ul>
         <div class="container">
-            <p>&copy; 2025 Rodihab. Rehabilitación online especializada en rodilla. Todos los derechos reservados.</p>
+            <h2>Rehabilitación online de rodilla especializada en LCA</h2>
+            <p class="hero-subtitle">
+                Recupérate desde donde quieras, con programas basados en ciencia y supervisión diaria.
+            </p>
+            <a href="#fases-contenedor" class="btn btn-primary">
+                Empezar mi recuperación
+            </a>
         </div>
-    </footer>
+    </section>
+
+    <!-- SECCIÓN FASES STORYTELLING -->
+    <section id="fases-contenedor">
+
+        <div class="fases-wrapper">
+
+            <article class="fase">
+                <div class="fase-inner">
+                    <span class="fase-num">01</span>
+                    <h2>Post-operatorio</h2>
+                    <p>Controlar la inflamación y recuperar la extensión completa. Movilidad pasiva.</p>
+                    <img src="assets/images/1.jpg" alt="Fase 1">
+                </div>
+            </article>
+
+            <article class="fase">
+                <div class="fase-inner">
+                    <span class="fase-num">02</span>
+                    <h2>Fortalecimiento</h2>
+                    <p>Ganancia de fuerza y estabilidad. Inicio de carga progresiva.</p>
+                    <img src="assets/images/2.jpg" alt="Fase 2">
+                </div>
+            </article>
+
+            <article class="fase">
+                <div class="fase-inner">
+                    <span class="fase-num">03</span>
+                    <h2>Readaptación</h2>
+                    <p>Introducción al impacto, cambios de dirección y gestos deportivos.</p>
+                    <img src="assets/images/3.jpg" alt="Fase 3">
+                </div>
+            </article>
+
+            <article class="fase">
+                <div class="fase-inner">
+                    <span class="fase-num">04</span>
+                    <h2>Vuelta al deporte</h2>
+                    <p>Entrenamiento completo con el equipo y alta deportiva definitiva.</p>
+                    <img src="assets/images/4.jpg" alt="Fase 4">
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPARATIVA -->
+    <section id="comparativa" class="bg-light">
+        <div class="container">
+            <div class="comparativa-header">
+                <h2 class="section-title">¿Por qué elegir online?</h2>
+                <p>La fisioterapia tradicional vs. La metodología Rodihab</p>
+            </div>
+            
+            <div class="versus-grid">
+
+                <div class="versus-card tradicional">
+                    <h3>Clínica Tradicional</h3>
+                    <ul class="versus-list">
+                        <li class="negative">
+                            <span class="icon">✖</span>
+                            <div>
+                                <strong>Sesiones puntuales</strong>
+                                <p>1 hora a la semana. Estás solo el resto del tiempo.</p>
+                            </div>
+                        </li>
+                        <li class="negative">
+                            <span class="icon">✖</span>
+                            <div>
+                                <strong>Desplazamientos</strong>
+                                <p>Pierdes tiempo en ir y volver a la clínica.</p>
+                            </div>
+                        </li>
+                        <li class="negative">
+                            <span class="icon">✖</span>
+                            <div>
+                                <strong>Coste elevado</strong>
+                                <p>Pagas por cada visita individual.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="versus-card winner">
+                    <h3>Método Rodihab</h3>
+                    <ul class="versus-list">
+                        <li class="positive">
+                            <span class="icon">✔</span>
+                            <div>
+                                <strong>Seguimiento Diario 24/7</strong>
+                                <p>Corregimos tus vídeos y dudas cada día.</p>
+                            </div>
+                        </li>
+                        <li class="positive">
+                            <span class="icon">✔</span>
+                            <div>
+                                <strong>Desde casa</strong>
+                                <p>Entrena en tu gimnasio o salón con nuestra App.</p>
+                            </div>
+                        </li>
+                        <li class="positive">
+                            <span class="icon">✔</span>
+                            <div>
+                                <strong>Resultados Reales</strong>
+                                <p>Basado en la evidencia científica más actual.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Rodihab. Rehabilitación online de rodilla.</p>
+    </div>
+</footer>
 
 </body>
 </html>
