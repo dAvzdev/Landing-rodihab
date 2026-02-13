@@ -1,14 +1,14 @@
 /* -------------------- 1. VARIABLES Y RESET -------------------- */
 :root {
-    --primary: #0284c7;    
-    --secondary: #0f172a;    
-    --accent: #10b981;       
-    --bg-light: #f8fafc;      
+    --primary: #0284c7;
+    --secondary: #0f172a;
+    --accent: #10b981;
+    --bg-light: #f8fafc;
     --white: #ffffff;
     --text-muted: #64748b;
     --font-main: system-ui, -apple-system, sans-serif;
     --max-width: 1200px;
-    --shadow-card: 0 10px 30px rgba(0,0,0,0.08);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -19,6 +19,8 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    height: 100vh;
 }
 
 body {
@@ -26,19 +28,8 @@ body {
     color: var(--secondary);
     background-color: var(--white);
     line-height: 1.6;
-    overflow-x: hidden;
-    overscroll-behavior-y: none;
-    timeline-scope: --hero, --fases, --comp, --elegir, --funciona, --precios, --tests, --contacto;  /* para side-nav */
-}
-
-/* Snap solo en secciones normales (el deck queda fuera) */
-section:not(.deck-container) {
-    scroll-snap-align: start;
-    min-height: 100vh;
-}
-
-.deck-container {
-    scroll-snap-align: none;
+    timeline-scope: --hero-timeline, --fases-timeline, --comp-timeline, --elegir-timeline,
+                    --steps-timeline, --precios-timeline, --tests-timeline, --contacto-timeline;
 }
 
 ul { list-style: none; }
@@ -50,12 +41,13 @@ img { max-width: 100%; display: block; }
     width: 90%;
     max-width: var(--max-width);
     margin: 0 auto;
+    max-height: 90vh;
 }
 
 .btn {
     display: inline-block;
     padding: 12px 32px;
-    border-radius: 50px; 
+    border-radius: 50px;
     font-weight: 600;
     transition: all 0.3s ease;
     text-align: center;
@@ -64,11 +56,11 @@ img { max-width: 100%; display: block; }
 .btn-primary {
     background-color: var(--primary);
     color: var(--white);
-    box-shadow: 0 4px 14px rgba(2,132,199,0.4);
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
 }
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(2,132,199,0.5);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
 }
 .btn-outline {
     border: 2px solid var(--primary);
@@ -96,7 +88,7 @@ header {
     top: 0;
     width: 100%;
     height: 50px;
-    background: rgba(43, 49, 65, 0.627); 
+    background: rgba(43, 49, 65, 0.627);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -104,30 +96,36 @@ header {
     display: flex;
     align-items: center;
 }
+
 .header-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
 }
+
 header img.logo {
     height: 150px;
     width: auto;
     display: block;
     margin-top: 5px;
 }
+
 nav {
     display: flex;
     align-items: center;
 }
+
 .menu-button {
     display: none;
     cursor: pointer;
-    color: white; 
+    color: white;
 }
+
 .menu-checkbox {
     display: none;
 }
+
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -135,14 +133,16 @@ nav {
     margin: 0;
     padding: 0;
 }
+
 .nav-links a {
     text-decoration: none;
-    color: white; 
+    color: white;
     font-weight: 500;
     transition: color 0.2s;
-    position: relative;  
-    padding-bottom: 4px; 
+    position: relative;
+    padding-bottom: 4px;
 }
+
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -154,6 +154,7 @@ nav {
     transition: width 0.3s ease, left 0.3s ease;
     border-radius: 2px;
 }
+
 .nav-links a:hover::after {
     width: 100%;
     left: 0;
@@ -162,99 +163,7 @@ nav {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* -------------------- 4. SCROLLTELLING (ANIMACIONES Y TIMELINES) -------------------- */
-/* 4.1. Definición de timelines de sección */
-#hero { view-timeline: --hero block; }
-#fases-contenedor { view-timeline: --fases block; }
-#comparativa { view-timeline: --comp block; }
-#por-que-elegir { view-timeline: --elegir block; }
-#como-funciona { view-timeline: --funciona block; }
-#precios { view-timeline: --precios block; }
-#testimonios { view-timeline: --tests block; }
-#contacto-home { view-timeline: --contacto block; }
-
-/* 4.2. Keyframes generales para animaciones scroll-driven */
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideLeft {
-    from { opacity: 0; transform: translateX(-100px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-@keyframes slideRight {
-    from { opacity: 0; transform: translateX(100px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-@keyframes zoomIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-@keyframes feature-reveal {
-    from { opacity: 0; transform: translateY(100px) scale(0.8); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes step-reveal {
-    0% { opacity: 0.3; transform: scale(0.9); filter: blur(2px); }
-    50% { opacity: 1; transform: scale(1.1); filter: blur(0); }
-    100% { opacity: 1; transform: scale(1); }
-}
-@keyframes line-grow {
-    from { width: 0%; }
-    to { width: 80%; }
-}
-@keyframes heroFade {
-    to { opacity: 0; transform: translateY(-50px); }
-}
-@keyframes dot-expand {
-    0%, 100% { height: 10px; background: var(--white); border-color: rgba(15, 23, 42, 0.25); }
-    45%, 55% { height: 35px; background: var(--white); border-color: var(--white); box-shadow: 0 0 15px rgba(2, 132, 199, 0.5); }
-}
-@keyframes tooltip-show {
-    0%, 100% { opacity: 0; right: 180%; }
-    45%, 55% { opacity: 1; right: 200%; }
-}
-@keyframes chatPop {
-    from { 
-        opacity: 0; 
-        transform: translateY(30px) scale(0.95); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0) scale(1); 
-    }
-}
-
-/* 4.3. Clases de animación reutilizables (se activan al entrar en viewport) */
-.reveal-up {
-    view-timeline-name: --item-reveal;
-    view-timeline-axis: block;
-    animation: fadeUp linear both;
-    animation-timeline: --item-reveal;
-    animation-range: entry 10% cover 30%;
-}
-.slide-in-left {
-    animation: slideLeft linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 50%;
-}
-.slide-in-right {
-    animation: slideRight linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 50%;
-}
-.reveal-zoom {
-    animation: zoomIn linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 50%;
-}
-.reveal-chat {
-    animation: chatPop linear both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 30%;
-}
-
-/* 4.4. Side Nav (scroll‑spy) */
+/* -------------------- 4. SIDE NAV (scroll‑spy) -------------------- */
 .side-nav {
     position: fixed;
     top: 50%;
@@ -286,7 +195,7 @@ nav {
 }
 .nav-dot {
     position: relative;
-    display: block;       
+    display: block;
     width: 10px;
     height: 10px;
     border-radius: 20px;
@@ -295,6 +204,10 @@ nav {
     transition: all 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     cursor: pointer;
     z-index: 3;
+    animation-name: dot-expand;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-range: entry 10% exit 10%;
 }
 .nav-dot .tooltip {
     position: absolute;
@@ -312,34 +225,22 @@ nav {
     pointer-events: none;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-/* Asignación de timelines a cada punto */
-.nav-dot:nth-child(1), .nav-dot:nth-child(1) .tooltip { animation-timeline: --hero; }
-.nav-dot:nth-child(2), .nav-dot:nth-child(2) .tooltip { animation-timeline: --fases; }
-.nav-dot:nth-child(3), .nav-dot:nth-child(3) .tooltip { animation-timeline: --comp; }
-.nav-dot:nth-child(4), .nav-dot:nth-child(4) .tooltip { animation-timeline: --elegir; }
-.nav-dot:nth-child(5), .nav-dot:nth-child(5) .tooltip { animation-timeline: --funciona; }
-.nav-dot:nth-child(6), .nav-dot:nth-child(6) .tooltip { animation-timeline: --precios; }
-.nav-dot:nth-child(7), .nav-dot:nth-child(7) .tooltip { animation-timeline: --tests; }
-.nav-dot:nth-child(8), .nav-dot:nth-child(8) .tooltip { animation-timeline: --contacto; }
-.nav-dot {
-    animation-name: dot-expand;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-range: entry 10% exit 10%;
-}
-.nav-dot .tooltip {
-    animation-name: tooltip-show;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-range: entry 10% exit 10%;
-}
+.nav-dot:nth-child(1) { animation-timeline: --hero-timeline; }
+.nav-dot:nth-child(2) { animation-timeline: --fases-timeline; }
+.nav-dot:nth-child(3) { animation-timeline: --comp-timeline; }
+.nav-dot:nth-child(4) { animation-timeline: --elegir-timeline; }
+.nav-dot:nth-child(5) { animation-timeline: --steps-timeline; }
+.nav-dot:nth-child(6) { animation-timeline: --precios-timeline; }
+.nav-dot:nth-child(7) { animation-timeline: --tests-timeline; }
+.nav-dot:nth-child(8) { animation-timeline: --contacto-timeline; }
+
 .nav-dot:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
     height: 15px !important;
-    background: var(--white) !important;
-    border-color: var(--white) !important;
+    background: var(--secondary) !important;
+    border-color: var(--secondary) !important;
 }
 .nav-dot:hover .tooltip {
     opacity: 1 !important;
@@ -349,64 +250,16 @@ nav {
     transform: scale(0.9);
 }
 
-/* 4.5. Deck de fases (sticky cards) */
-.deck-container {
-    height: 400vh;
-    position: relative;
-    background: #000;
-}
-.deck-card {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    color: white;
-    box-shadow: 0 -5px 20px rgba(0,0,0,1);
-}
-
-/* 4.6. Animaciones específicas de secciones */
-
-/* Hero parallax */
-.hero-content {
-    animation: heroFade linear both;
-    animation-timeline: scroll();
-    animation-range: 0 500px;
-}
-
-/* Por qué elegir – animación secuencial de tarjetas */
-#por-que-elegir { view-timeline-name: --section-features; }
-.feature-card {
-    animation: feature-reveal linear both;
-    animation-timeline: --section-features;
-    animation-range: entry 10% contain 40%;
-}
-.feature-card:nth-child(1) { animation-range: entry 5% contain 30%; }
-.feature-card:nth-child(2) { animation-range: entry 15% contain 35%; }
-.feature-card:nth-child(3) { animation-range: entry 25% contain 40%; }
-.feature-card:nth-child(4) { animation-range: entry 35% contain 45%; }
-
-/* Cómo funciona – animación de pasos y línea */
-#como-funciona { view-timeline-name: --section-steps; }
-.step-item {
-    animation: step-reveal linear both;
-    animation-timeline: --section-steps;
-}
-.step-item:nth-child(2) { animation-range: entry 10% contain 30%; }
-.step-item:nth-child(3) { animation-range: entry 30% contain 50%; } 
-.step-item:nth-child(4) { animation-range: entry 50% contain 70%; }
-.connector-line {
-    width: 0%;
-    animation: line-grow linear both;
-    animation-timeline: --section-steps;
-    animation-range: entry 10% contain 60%;
-}
-
 /* -------------------- 5. HERO -------------------- */
-.hero { 
+#hero {
+    view-timeline-name: --hero-timeline;
+    view-timeline-axis: block;
+    animation: hero-out linear both;
+    animation-timeline: --hero-timeline;
+    animation-range: exit 0% exit 100%;
+    z-index: 10;
+}
+.hero {
     height: 100vh;
     position: relative;
     display: flex;
@@ -451,10 +304,8 @@ nav {
 .hero-slider li:nth-child(1) { animation-delay: 0s; }
 .hero-slider li:nth-child(2) { animation-delay: 5s; }
 .hero-slider li:nth-child(3) { animation-delay: 10s; }
-@keyframes slideShow {
-    0%, 20% { opacity: 1; transform: scale(1); }
-    25%, 100% { opacity: 0; transform: scale(1.1); }
-}
+.hero-slider li:nth-child(4) { animation-delay: 15s; }
+
 .scroll-indicator {
     position: absolute;
     bottom: 20px;
@@ -482,12 +333,44 @@ nav {
     margin-top: 5px;
     animation: wheel 2s infinite;
 }
+@keyframes slideShow {
+    0%, 20% { opacity: 1; transform: scale(1); }
+    25%, 100% { opacity: 0; transform: scale(1.1); }
+}
 @keyframes wheel {
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(15px); opacity: 0; }
 }
 
-/* -------------------- 6. FASES (deck cards) -------------------- */
+/* -------------------- 6. FASES (deck sticky cards) -------------------- */
+#fases-contenedor {
+    view-timeline-name: --fases-timeline;
+    view-timeline-axis: block;
+}
+.deck-container {
+    scroll-snap-align: none;
+    height: 450vh;
+    position: relative;
+    background: #000;
+}
+.deck-card {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 1);
+    transition: filter 0.5s ease;
+}
+.deck-card:not(:last-child) {
+    animation: card-overlay linear both;
+    animation-timeline: view();
+    animation-range: exit 0% exit 40%;
+}
 .card-1 { background: linear-gradient(to bottom right, #0f172a, #1e293b); z-index: 1; }
 .card-2 { background: linear-gradient(to bottom right, #1e293b, #1e293b); z-index: 2; }
 .card-3 { background: linear-gradient(to bottom right, #1e293b, #1e293b); z-index: 3; }
@@ -526,14 +409,14 @@ nav {
 }
 .img-wrapper img {
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     transform: perspective(1000px) rotateY(-5deg);
 }
 
 /* -------------------- 7. COMPARATIVA -------------------- */
-section {
-    padding: 6rem 0;
-    position: relative;
+#comparativa {
+    view-timeline-name: --comp-timeline;
+    view-timeline-axis: block;
 }
 .comparativa-header {
     text-align: center;
@@ -552,7 +435,12 @@ section {
     border-radius: 24px;
     box-shadow: var(--shadow-card);
     position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: card-3d-enter linear both;
+    animation-timeline: view();
 }
+.versus-card:nth-child(1) { animation-range: entry 0% entry 40%; }
+.versus-card:nth-child(2) { animation-range: entry 20% entry 60%; }
 .versus-card.tradicional {
     border: 1px dashed #cbd5e1;
     color: var(--text-muted);
@@ -572,6 +460,7 @@ section {
     border-radius: 20px;
     font-weight: bold;
     font-size: 0.8rem;
+    animation: badge-glow 2s infinite alternate;
 }
 .versus-list li {
     display: flex;
@@ -583,9 +472,13 @@ section {
 .positive .icon { color: var(--accent); }
 
 /* -------------------- 8. POR QUÉ ELEGIR -------------------- */
+#por-que-elegir {
+    view-timeline-name: --elegir-timeline;
+    view-timeline-axis: block;
+}
 .features-grid {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 .feature-card {
@@ -597,7 +490,13 @@ section {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
+    animation: feature-pop linear both;
+    animation-timeline: --elegir-timeline;
 }
+.feature-card:nth-child(1) { animation-range: entry 5% contain 30%; }
+.feature-card:nth-child(2) { animation-range: entry 15% contain 35%; }
+.feature-card:nth-child(3) { animation-range: entry 25% contain 40%; }
+.feature-card:nth-child(4) { animation-range: entry 35% contain 45%; }
 .feature-card::before {
     content: "";
     position: absolute;
@@ -617,69 +516,89 @@ section {
 .feature-card:hover::before {
     opacity: 1;
 }
-.icon-feat { 
-    font-size: 3.5rem; 
-    margin-bottom: 1.5rem; 
+.icon-feat {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
     display: inline-block;
     transition: transform 0.3s ease;
 }
 .feature-card:hover .icon-feat {
     transform: scale(1.2) rotate(5deg);
 }
-.feature-card h3 {
-    margin-bottom: 1rem;
-    color: var(--secondary);
-}
 
-/* -------------------- 9. CÓMO FUNCIONA -------------------- */
+/* -------------------- 9. CÓMO FUNCIONA (sticky con aparición secuencial) -------------------- */
+#como-funciona {
+    height: 250vh;
+    position: relative;
+    view-timeline-name: --steps-timeline;
+    view-timeline-axis: block;
+}
+#como-funciona .container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .steps-wrapper {
-    display: flex; 
-    justify-content: space-between; 
-    position: relative; 
-    max-width: 1000px; 
-    margin: 4rem auto 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 30px;
 }
 .connector-line {
-    position: absolute; 
-    top: 25px; 
-    left: 10%; 
-    width: 80%; 
-    height: 3px; 
-    background: rgba(255, 255, 255, 0.1); 
+    position: absolute;
+    top: 25px;
+    left: 10%;
+    width: 0%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
     z-index: 0;
+    animation: line-grow linear both;
+    animation-timeline: --steps-timeline;
+    animation-range: entry 0% entry 60%;
+    overflow: hidden;
 }
 .connector-line::after {
     content: "";
     position: absolute;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    animation: line-flow 3s infinite linear;
-}
-@keyframes line-flow {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    animation: line-flow 2s infinite linear;
 }
 .step-item {
-    position: relative; 
-    z-index: 1; 
-    text-align: center; 
-    flex: 1; 
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
     padding: 0 20px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: step-appear linear both;
+    animation-timeline: --steps-timeline;
 }
+.step-item:nth-child(1) { animation-range: entry 0% entry 25%; }
+.step-item:nth-child(2) { animation-range: entry 15% entry 40%; }
+.step-item:nth-child(3) { animation-range: entry 30% entry 55%; }
 .step-number {
-    width: 60px; height: 60px; 
-    background: var(--primary); 
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
     color: var(--white);
-    border-radius: 50%; 
-    display: flex; 
-    align-items: center; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    font-weight: 800; 
-    margin: 0 auto 1.5rem; 
+    font-weight: 800;
+    margin: 0 auto 1.5rem;
     font-size: 1.4rem;
     box-shadow: 0 0 0 8px rgba(2, 132, 199, 0.2);
-    position: relative;
     transition: 0.3s;
 }
 .step-item:hover .step-number {
@@ -698,6 +617,10 @@ section {
 }
 
 /* -------------------- 10. PRECIOS -------------------- */
+#precios {
+    view-timeline-name: --precios-timeline;
+    view-timeline-axis: block;
+}
 .pricing-grid {
     display: flex;
     gap: 2rem;
@@ -715,12 +638,17 @@ section {
     max-width: 400px;
     box-shadow: var(--shadow-card);
     transition: transform 0.3s;
+    animation: card-flip-enter linear both;
+    animation-timeline: view();
 }
+.price-card:nth-child(1) { animation-range: entry 0% entry 40%; }
+.price-card:nth-child(2) { animation-range: entry 20% entry 60%; }
 .price-card:hover { transform: translateY(-5px); }
 .price-card.popular {
     border: 2px solid var(--primary);
     position: relative;
     background: #f0f9ff;
+    animation: popular-glow 3s infinite alternate;
 }
 .pop-badge {
     background: var(--primary);
@@ -734,6 +662,7 @@ section {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.8rem;
+    border-radius: 20px 20px 0 0;
 }
 .price {
     font-size: 2.5rem;
@@ -748,6 +677,10 @@ section {
 }
 
 /* -------------------- 11. TESTIMONIOS -------------------- */
+#testimonios {
+    view-timeline-name: --tests-timeline;
+    view-timeline-axis: block;
+}
 .chat-testimonials {
     display: flex;
     flex-direction: column;
@@ -756,52 +689,46 @@ section {
     margin: 2rem auto;
     padding: 0 1rem;
 }
-
 .chat-bubble {
     display: flex;
     flex-direction: column;
     max-width: 80%;
     position: relative;
     transition: transform 0.3s ease;
+    animation: chat-pop-enter linear both;
+    animation-timeline: view();
 }
-
-.chat-bubble:hover {
-    transform: scale(1.01);
-}
-
+.chat-bubble:nth-child(1) { animation-range: entry 0% cover 20%; }
+.chat-bubble:nth-child(2) { animation-range: entry 10% cover 30%; }
+.chat-bubble:nth-child(3) { animation-range: entry 20% cover 40%; }
+.chat-bubble:hover { transform: scale(1.01); }
 .t-left { align-self: flex-start; }
 .t-right { align-self: flex-end; }
-
 .chat-content {
     padding: 1.5rem 2rem;
     font-size: 1rem;
     line-height: 1.7;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
-
 .t-left .chat-content {
     background: var(--white);
     color: var(--secondary);
     border-radius: 20px 20px 20px 4px;
     border: 1px solid #e2e8f0;
 }
-
 .t-right .chat-content {
     background: var(--primary);
     color: var(--white);
     border-radius: 20px 20px 4px 20px;
 }
-
 .chat-author {
     display: flex;
     gap: 12px;
     align-items: center;
     margin-top: 15px;
 }
-
 .t-right .chat-author { justify-content: flex-end; }
-
 .avatar {
     width: 45px;
     height: 45px;
@@ -813,30 +740,30 @@ section {
     justify-content: center;
     font-weight: 800;
     font-size: 1.2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
 }
-
 .author-info {
     display: flex;
     flex-direction: column;
 }
-
 .author-info strong {
     font-size: 0.95rem;
     color: var(--secondary);
 }
-
 .author-info span {
     font-size: 0.8rem;
     color: var(--text-muted);
 }
-
 .t-right .author-info { text-align: right; }
 .t-right .author-info strong { color: var(--secondary); }
 
 /* -------------------- 12. CONTACTO Y FOOTER -------------------- */
-#contacto-home { padding: 4rem 0; }
+#contacto-home {
+    view-timeline-name: --contacto-timeline;
+    view-timeline-axis: block;
+    padding: 4rem 0;
+}
 #rehab-form {
     background: white;
     padding: 3rem;
@@ -844,6 +771,9 @@ section {
     max-width: 600px;
     margin: 0 auto;
     box-shadow: var(--shadow-card);
+    animation: form-slide-up linear both;
+    animation-timeline: --contacto-timeline;
+    animation-range: entry 0% contain 30%;
 }
 #rehab-form input,
 #rehab-form select,
@@ -853,6 +783,15 @@ section {
     margin-bottom: 1rem;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
+    transition: all 0.3s ease;
+    animation: field-glow linear both;
+    animation-timeline: --contacto-timeline;
+    animation-range: entry 10% contain 40%;
+}
+#rehab-form button {
+    animation: button-pulse 2s infinite alternate;
+    animation-timeline: --contacto-timeline;
+    animation-range: entry 20% contain 60%;
 }
 footer {
     background: var(--secondary);
@@ -861,7 +800,113 @@ footer {
     text-align: center;
 }
 
-/* -------------------- 13. RESPONSIVE -------------------- */
+/* -------------------- 13. KEYFRAMES GENERALES (usados en varias secciones) -------------------- */
+@keyframes hero-out {
+    to { transform: scale(0.8); opacity: 0; filter: blur(10px); }
+}
+@keyframes card-overlay {
+    to { filter: brightness(0.2) scale(0.95); }
+}
+@keyframes dot-expand {
+    0%, 100% { height: 10px; background: var(--white); border-color: rgba(15, 23, 42, 0.25); }
+    45%, 55% { height: 35px; background: var(--white); border-color: var(--white); box-shadow: 0 0 15px rgba(2, 132, 199, 0.5); }
+}
+@keyframes line-flow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+@keyframes card-3d-enter {
+    0% { opacity: 0; transform: perspective(800px) rotateY(-15deg) scale(0.9); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    50% { opacity: 1; transform: perspective(800px) rotateY(5deg) scale(1.02); box-shadow: 0 30px 50px rgba(0,0,0,0.3); }
+    100% { opacity: 1; transform: perspective(800px) rotateY(0) scale(1); box-shadow: var(--shadow-card); }
+}
+@keyframes badge-glow {
+    from { box-shadow: 0 0 5px rgba(2, 132, 199, 0.5); }
+    to { box-shadow: 0 0 20px rgba(2, 132, 199, 0.8); }
+}
+@keyframes feature-pop {
+    0% { opacity: 0; transform: translateY(30px) scale(0.8) rotate(-2deg); border-color: transparent; }
+    50% { opacity: 1; transform: translateY(0) scale(1.05) rotate(1deg); border-color: var(--primary); box-shadow: 0 20px 30px rgba(2, 132, 199, 0.2); }
+    100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); border-color: rgba(226, 232, 240, 0.8); box-shadow: var(--shadow-card); }
+}
+@keyframes step-appear {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+@keyframes line-grow {
+    from { width: 0%; }
+    to { width: 80%; }
+}
+@keyframes card-flip-enter {
+    0% { opacity: 0; transform: perspective(600px) rotateY(30deg) scale(0.8); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    50% { opacity: 1; transform: perspective(600px) rotateY(-5deg) scale(1.02); box-shadow: 0 30px 40px rgba(0,0,0,0.2); }
+    100% { opacity: 1; transform: perspective(600px) rotateY(0) scale(1); box-shadow: var(--shadow-card); }
+}
+@keyframes popular-glow {
+    from { box-shadow: 0 10px 20px rgba(2, 132, 199, 0.2); }
+    to { box-shadow: 0 20px 40px rgba(2, 132, 199, 0.5); }
+}
+@keyframes chat-pop-enter {
+    0% { opacity: 0; transform: translateY(50px) scale(0.7); filter: blur(5px); }
+    40% { opacity: 1; transform: translateY(0) scale(1.05); filter: blur(0); }
+    70% { transform: scale(1); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+@keyframes form-slide-up {
+    0% { opacity: 0; transform: translateY(100px) scale(0.9); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    100% { opacity: 1; transform: translateY(0) scale(1); box-shadow: var(--shadow-card); }
+}
+@keyframes field-glow {
+    0% { border-color: #cbd5e1; box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.5); }
+    50% { border-color: var(--primary); box-shadow: 0 0 10px rgba(2, 132, 199, 0.5); }
+    100% { border-color: #cbd5e1; box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+}
+@keyframes button-pulse {
+    from { transform: scale(1); box-shadow: 0 4px 14px rgba(2,132,199,0.4); }
+    to { transform: scale(1.02); box-shadow: 0 6px 20px rgba(2,132,199,0.7); }
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* -------------------- 14. CLASES DE ANIMACIÓN REUTILIZABLES -------------------- */
+.reveal-up {
+    view-timeline-name: --item-reveal;
+    view-timeline-axis: block;
+    animation: fadeUp linear both;
+    animation-timeline: --item-reveal;
+    animation-range: entry 10% cover 30%;
+}
+.slide-in-left {
+    animation: slideLeft linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+}
+.slide-in-right {
+    animation: slideRight linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+}
+.reveal-zoom {
+    animation: zoomIn linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+}
+
+/* -------------------- 15. RESPONSIVE -------------------- */
 @media (max-width: 768px) {
     .deck-container { height: auto; }
     .deck-card {
@@ -900,13 +945,13 @@ footer {
         top: 60px;
         left: 0;
         width: 100%;
-        background: rgba(15, 23, 42, 0.95); 
+        background: rgba(15, 23, 42, 0.95);
         backdrop-filter: blur(10px);
         flex-direction: column;
         align-items: center;
         gap: 1rem;
         padding: 2rem 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         transform: translateY(-150%);
         transition: transform 0.3s ease;
         z-index: 999;
