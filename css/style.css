@@ -348,7 +348,7 @@ header img {
 }
 
 
-/* ----------------------- COMPARATIVA REDISEÑADA (ESTILO CARDS) ------------------------------- */
+/* ----------------------- COMPARATIVA (presencial/online) ------------------------------- */
 .comparativa-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -414,14 +414,13 @@ header img {
     color: #64748b;
 }
 
-/* Responsive Grid Comparativa */
 @media (max-width: 768px) {
     .versus-grid {
         grid-template-columns: 1fr;
     }
     .versus-card.winner {
         transform: none;
-        order: -1; /* Poner la ganadora primero en móvil */
+        order: -1;
     }
     .header-content {
         flex-direction: column;
@@ -500,7 +499,6 @@ header img {
     font-size: 0.9rem; 
 }
 
-/* Animación de entrada para elementos al hacer scroll */
 .stat-item, .form-container {
     view-timeline-name: --reveal;
     view-timeline-axis: block;
@@ -534,7 +532,6 @@ header img {
     display: block;
 }
 
-/* Estilo del Formulario */
 #rehab-form {
     background: var(--bg-light);
     padding: 3rem;
@@ -553,15 +550,13 @@ header img {
     font-family: inherit;
 }
 
-
-/* Ocultar los inputs de radio */
 input[name="testimonial"] {
     display: none;
 }
 
 .testimonial-wrapper {
     position: relative;
-    height: 350px; /* Ajusta según el contenido */
+    height: 350px;
     overflow: hidden;
     margin-top: 2rem;
 }
@@ -579,7 +574,7 @@ input[name="testimonial"] {
     border: 1px solid #e2e8f0;
 }
 
-/* Lógica de visualización */
+
 #t1:checked ~ .testimonial-wrapper .item-1,
 #t2:checked ~ .testimonial-wrapper .item-2,
 #t3:checked ~ .testimonial-wrapper .item-3 {
@@ -596,7 +591,7 @@ input[name="testimonial"] {
 
 .autor strong { color: var(--primary); font-size: 1.2rem; }
 
-/* Estilo de los puntitos */
+
 .slider-dots {
     display: flex;
     justify-content: center;
@@ -638,7 +633,7 @@ summary {
     padding: 1.5rem;
     font-weight: 600;
     cursor: pointer;
-    list-style: none; /* Oculta la flecha por defecto */
+    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -651,7 +646,7 @@ summary::after {
 }
 
 details[open] summary::after {
-    transform: rotate(45deg); /* Convierte el + en x */
+    transform: rotate(45deg);
 }
 
 details p {
