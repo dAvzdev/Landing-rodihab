@@ -8,6 +8,10 @@
     <link rel="icon" href="assets/favicons/favicon-32x32.png">
 </head>
 <body>
+
+<div class="scroll-progress-vertical">
+    <div class="progress-fill"></div>
+</div>
     
 <header>
     <div class="container">
@@ -37,16 +41,14 @@
     </div>
 </header>
 
-<div class="global-progress-bar"></div>
-
 <main>
 
     <!-- HERO -->
     <section class="hero">
         <ul class="hero-slider">
-            <li><img src="assets/images/1.jpg" class="fase-img" alt="Fase 1"></li>
-            <li><img src="assets/images/2.jpg" class="fase-img" alt="Fase 2"></li>
-            <li><img src="assets/images/3.jpg" class="fase-img" alt="Fase 3"></li>
+            <li><img src="assets/images/rehab1.png" class="fase-img" alt="Fase 1"></li>
+            <li><img src="assets/images/rehab2.png" class="fase-img" alt="Fase 2"></li>
+            <li><img src="assets/images/rehab3.png" class="fase-img" alt="Fase 3"></li>
             <li><img src="assets/images/4.jpg" class="fase-img" alt="Fase 4"></li> 
         </ul>
         <div class="container">
@@ -54,10 +56,16 @@
             <p class="hero-subtitle">
                 Recupérate desde donde quieras, con programas basados en ciencia y supervisión diaria.
             </p>
-            <a href="#fases-contenedor" class="btn btn-primary">
+            <a href="#precios" class="btn btn-primary">
                 Empezar mi recuperación
             </a>
         </div>
+        <div class="scroll-indicator">
+    <span>Descubre tu camino</span>
+    <div class="mouse">
+        <div class="wheel"></div>
+    </div>
+</div>
     </section>
 
     <!-- SECCIÓN FASES STORYTELLING -->
@@ -223,29 +231,39 @@
         </div>
     </section>
 
-    <!--  Evidencia  -->
-    <section id="evidencia" class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number" data-target="95">0</span>%
-                <p>de éxito en retorno al deporte ⚽</p>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="500">0</span>+
-                pacientes recuperados 🏥
-            </div>
+    <!--  precios  -->
+    <section id="precios" class="container">
+        <div class="comparativa-header">
+            <h2 class="section-title">Planes de Recuperación</h2>
+            <p>Inversión en tu salud y retorno al deporte</p>
         </div>
-    </section>
 
-    <section id="testimonios">
-        <div class="container">
-            <h2 class="section-title">Lo que dicen nuestros atletas</h2>
-            <div class="slider-wrapper">
-                <div class="testimonial-slide active">
-                    <p>"Gracias a Rodihab volví a jugar al fútbol sin miedo tras mi operación de LCA."</p>
-                    <span>- Carlos R.</span>
-                </div>
-                </div>
+        <div class="pricing-grid">
+            <article class="price-card">
+                <h3>Mensual</h3>
+                <div class="price">180€<span>/mes</span></div>
+                <p>Ideal para un empujón puntual o probar nuestra metodología.</p>
+                <ul class="versus-list">
+                    <li class="positive"><span class="icon">✔</span> Evaluación inicial por videollamada</li>
+                    <li class="positive"><span class="icon">✔</span> Acceso a plataforma</li>
+                    <li class="positive"><span class="icon">✔</span> Soporte diario con tu fisioterapeuta</li>
+                    <li class="positive"><span class="icon">✔</span> evaluaciones periodicas</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 2rem;">Empezar un mes</a>
+            </article>
+
+            <article class="price-card popular">
+                <h3>Trimestral</h3>
+                <div class="price">150€<span>/mes</span></div>
+                    <p>
+                        <strong style="color: var(--accent);">¡Ahorras 90€!</strong><br>
+                        La opción recomendada para una recuperación completa. Tres meses de acompañamiento...
+                    </p>                
+                        <ul class="versus-list">
+                    <li class="positive"><span class="icon">✔</span> <strong>Todo lo del mensual</strong></li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 2rem; background: var(--accent);">Elegir Plan Pro</a>
+            </article>
         </div>
     </section>
 
@@ -260,7 +278,7 @@
 
             <div class="testimonial-wrapper">
                 <div class="testimonial-card item-1">
-                    <p>"...conseguí volver a caminar a los 10 días de la operación sin muletas. 2 años después tengo una rodilla fuerte y sana."</p>
+                    <p>"Para mí cuarta y quinta operación de rodilla confié en la profesionalidad de Pablo. Eran 2 operaciones complicadas porque en la primera tuvieron que meterme un injerto de hueso en la tibia para poder el la siguiente operación reconstruir el cruzado anterior. La fisioterapia del pre operatorio sirvió mucho para preparar la pierna a poder recuperarse lo mejor y lo antes posible después de las operaciones. Lo demuestra que conseguí volver a caminar a los 10 días de la operación sin muletas. La rehabilitación de los siguientes meses fue muy bueno y la recuperación al final fue completa. 2 años después puedo confirmar de tener una rodilla fuerte y sana. He vuelto a practicar todos tipos de deportes sin problemas. Agradezco a Pablo haber seguido con cariño mi evolución y haberme aconsejado en cada momento."</p>
                     <div class="autor">
                         <strong>Matia Mazza, 40 años</strong>
                         <span>4ª y 5ª operación de rodilla</span>
@@ -268,7 +286,7 @@
                 </div>
 
                 <div class="testimonial-card item-2">
-                    <p>"Su trato fue profesional, humano y cercano. No solo me ayudó físicamente, sino que me motivó a volver al deporte."</p>
+                    <p>"Después de una reconstrucción de LCA y una sutura de menisco interno, empecé mi rehabilitación con Jaime y desde el primer día sentí que estaba en las mejores manos. Su trato fue siempre muy profesional, pero también muy humano y cercano, lo que hizo que cada etapa del proceso fuera mucho más llevadera. No solo me ayudó físicamente, sino que me motivó constantemente a volver al deporte, que era lo que más me preocupaba. Si alguna vez tuviera que pasar por algo parecido, no dudaría en volver a contar con él."</p>
                     <div class="autor">
                         <strong>Lucía Prieto, 22 años</strong>
                         <span>Reconstrucción LCA y Menisco</span>
@@ -276,7 +294,7 @@
                 </div>
 
                 <div class="testimonial-card item-3">
-                    <p>"La experiencia fue magnífica. El seguimiento fue excelente, no solo durante la rehabilitación, sino posteriormente."</p>
+                    <p>"Tuve un proceso de rehabilitación tras una operación de menisco y la experiencia fue magnífica. Tanto en lo físico —ejercicios, recuperación— como en lo personal, gracias a la atención tan cercana y personalizada de Pablo. El seguimiento fue excelente, no solo durante la rehabilitación, sino también posteriormente. ¡Lo recomiendo totalmente!"</p>
                     <div class="autor">
                         <strong>Ana Arias, 51 años</strong>
                         <span>Operación de Menisco</span>
@@ -351,7 +369,7 @@
 
     <!--detalles -->
     <section id="metodo-detalles" class="container">
-    <h2 class="section-title">Nuestra Metodología Científica 🧪</h2>
+    <h2 class="section-title">Nuestra Metodología </h2>
     <div class="metodo-grid">
         <div class="metodo-item">
             <div class="metodo-icon">📊</div>

@@ -1,3 +1,4 @@
+/* -------------------- 1. VARIABLES Y RESET -------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -14,35 +15,6 @@
     --max-width: 1200px;
 }
 
-/* ------------------------------ BARRA DE PROGRESO GLOBAL ---------------------------*/
-.global-progress-bar {
-    position: fixed;
-    top: 35px; 
-    left: 0;
-    height: 4px;
-    background: var(--primary);
-    width: 0%;
-    z-index: 999; 
-    
-    animation: scrollGlobal linear both;
-    animation-timeline: scroll(root);
-}
-
-@keyframes scrollGlobal {
-    to { width: 100%; }
-}
-
-/* ------------------------------ SECCIONES ---------------------------*/
-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-    position: relative;
-}
-
-/* -------------------------------- ESTILOS GENERALES ---------------------------*/
 body {
     font-family: var(--font-main);
     color: var(--secondary);
@@ -50,6 +22,7 @@ body {
     line-height: 1.6;
 }
 
+/* -------------------- 2. ELEMENTOS GLOBALES Y UTILIDADES -------------------- */
 a { 
     text-decoration: none; 
     color: inherit; 
@@ -64,6 +37,15 @@ img {
     display: block; 
 }
 
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+}
+
 .container {
     width: 90%;
     max-width: var(--max-width);
@@ -72,6 +54,7 @@ img {
     z-index: 2; 
 }
 
+/* Botones */
 .btn {
     display: inline-block;
     padding: 12px 32px;
@@ -86,8 +69,43 @@ img {
     box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
 }
 
-/* ------------------------------------ HEADER -------------------------------------*/
+/* Barra de Progreso Superior */
+.global-progress-bar {
+    position: fixed;
+    top: 35px; 
+    left: 0;
+    height: 4px;
+    background: var(--primary);
+    width: 0%;
+    z-index: 999; 
+    animation: scrollGlobal linear both;
+    animation-timeline: scroll(root);
+}
 
+@keyframes scrollGlobal {
+    to { width: 100%; }
+}
+
+/* Animaciones de Revelado (Scroll) */
+.stat-item, .form-container {
+    view-timeline-name: --reveal;
+    view-timeline-axis: block;
+    animation: reveal linear both;
+    animation-range: entry 10% cover 30%;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -------------------- 3. HEADER Y NAVEGACIÓN -------------------- */
 header {
     background-color: rgba(2, 132, 199, 0.95);
     backdrop-filter: blur(15px); 
@@ -132,8 +150,7 @@ header img {
     display: none;
 }
 
-/* ----------------- HERO SECTION & SLIDER --------------------- */
-
+/* -------------------- 4. SECCIÓN HERO (Slider Imágenes) -------------------- */
 .hero { 
     position: relative;
     height: 100vh;      
@@ -144,7 +161,6 @@ header img {
     overflow: hidden;   
     background: var(--secondary); 
 }
-
 
 .hero .container {
     position: relative;
@@ -196,43 +212,20 @@ header img {
     object-position: center;
 }
 
-
-.hero-slider li:nth-child(1) { 
-    animation-delay: 0s; 
-}
-.hero-slider li:nth-child(2) { 
-    animation-delay: 5s; 
-}
-.hero-slider li:nth-child(3) { 
-    animation-delay: 10s; 
-}
-.hero-slider li:nth-child(4) { 
-    animation-delay: 15s; 
-}
+.hero-slider li:nth-child(1) { animation-delay: 0s; }
+.hero-slider li:nth-child(2) { animation-delay: 5s; }
+.hero-slider li:nth-child(3) { animation-delay: 10s; }
+.hero-slider li:nth-child(4) { animation-delay: 15s; }
 
 @keyframes slideShow {
-    0% { 
-        opacity: 0; 
-        transform: scale(1);
-    }
-    2% { 
-        opacity: 1; 
-    }
-    25% { 
-        opacity: 1; 
-    }
-    30% { 
-        opacity: 0; 
-        transform: scale(1.1);
-    }
-    100% { 
-        opacity: 0;
-        transform: scale(1.1);
-    }
+    0% { opacity: 0; transform: scale(1); }
+    2% { opacity: 1; }
+    25% { opacity: 1; }
+    30% { opacity: 0; transform: scale(1.1); }
+    100% { opacity: 0; transform: scale(1.1); }
 }
 
-/* -------------------- SCROLLYTELLING FASES -------------------------*/
-
+/* -------------------- 5. SCROLLYTELLING (Fases y Estilos Generales)-------------------- */
 #fases-contenedor {
     background: var(--secondary);
     color: var(--white);
@@ -256,24 +249,11 @@ header img {
     overflow: hidden;
 }
 
-.fase:nth-child(1) {
-     top: 0; 
-     z-index: 1; 
-}
-
-.fase:nth-child(2) { 
-    top: 0; 
-    z-index: 2; 
-}
-
-.fase:nth-child(3) {
-    top: 0; 
-    z-index: 3; 
-}
-.fase:nth-child(4) { 
-    top: 0; 
-    z-index: 4; 
-}
+/* Apilamiento de Fases (Z-Index) */
+.fase:nth-child(1) { top: 0; z-index: 1; }
+.fase:nth-child(2) { top: 0; z-index: 2; }
+.fase:nth-child(3) { top: 0; z-index: 3; }
+.fase:nth-child(4) { top: 0; z-index: 4; }
 
 .fase-inner {
     max-width: 900px;
@@ -283,17 +263,6 @@ header img {
     animation: contentReveal ease-out both;
     animation-timeline: view();
     animation-range: entry 10% entry 60%;
-}
-
-@keyframes contentReveal {
-    from {
-        opacity: 0;
-        transform: translateY(50px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
 }
 
 .fase-num {
@@ -340,15 +309,7 @@ header img {
     transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .fase h2 { font-size: 2.2rem; }
-    .fase-num { font-size: 5rem; }
-    .fase p { font-size: 1rem; }
-    .fase img { max-height: 40vh; }
-}
-
-
-/* ----------------------- COMPARATIVA (presencial/online) ------------------------------- */
+/* -------------------- 6. SECCIÓN COMPARATIVA -------------------- */
 .comparativa-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -401,8 +362,8 @@ header img {
     margin-top: 2px;
 }
 
-.versus-list .negative .icon { color: #ef4444; } /* Rojo */
-.versus-list .positive .icon { color: var(--accent); } /* Verde */
+.versus-list .negative .icon { color: #ef4444; }
+.versus-list .positive .icon { color: var(--accent); }
 
 .versus-list strong {
     display: block;
@@ -414,24 +375,7 @@ header img {
     color: #64748b;
 }
 
-@media (max-width: 768px) {
-    .versus-grid {
-        grid-template-columns: 1fr;
-    }
-    .versus-card.winner {
-        transform: none;
-        order: -1;
-    }
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .section-title {
-        font-size: 2rem;
-    }
-}
-
-/* ----------------------- SERVICIOS (PASOS Y PLANES) ------------------------------- */
+/* -------------------- SECCIÓN SERVICIOS Y EQUIPO -------------------- */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -447,18 +391,9 @@ header img {
     transition: transform 0.3s ease;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-card svg {
-    margin-bottom: 1.5rem;
-}
-
-.service-card h3 {
-    margin-bottom: 1rem;
-    color: var(--secondary);
-}
+.service-card:hover { transform: translateY(-5px); }
+.service-card svg { margin-bottom: 1.5rem; }
+.service-card h3 { margin-bottom: 1rem; color: var(--secondary); }
 
 .service-card.featured {
     border: 2px solid var(--primary);
@@ -478,7 +413,6 @@ header img {
     font-weight: 400;
 }
 
-/* ----------------------- EQUIPO ------------------------------- */
 .team-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -499,24 +433,7 @@ header img {
     font-size: 0.9rem; 
 }
 
-.stat-item, .form-container {
-    view-timeline-name: --reveal;
-    view-timeline-axis: block;
-    animation: reveal linear both;
-    animation-range: entry 10% cover 30%;
-}
-
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* -------------------- 8. ESTADÍSTICAS Y EVIDENCIA-------------------- */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -532,27 +449,8 @@ header img {
     display: block;
 }
 
-#rehab-form {
-    background: var(--bg-light);
-    padding: 3rem;
-    border-radius: 30px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-#rehab-form input, #rehab-form select, #rehab-form textarea {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    font-family: inherit;
-}
-
-input[name="testimonial"] {
-    display: none;
-}
+/* -------------------- 9. TESTIMONIOS --------------------- */
+input[name="testimonial"] { display: none; }
 
 .testimonial-wrapper {
     position: relative;
@@ -574,7 +472,7 @@ input[name="testimonial"] {
     border: 1px solid #e2e8f0;
 }
 
-
+/* Lógica de visualización del slider */
 #t1:checked ~ .testimonial-wrapper .item-1,
 #t2:checked ~ .testimonial-wrapper .item-2,
 #t3:checked ~ .testimonial-wrapper .item-3 {
@@ -591,7 +489,7 @@ input[name="testimonial"] {
 
 .autor strong { color: var(--primary); font-size: 1.2rem; }
 
-
+/* Puntos de navegación */
 .slider-dots {
     display: flex;
     justify-content: center;
@@ -615,7 +513,7 @@ input[name="testimonial"] {
     border-radius: 10px;
 }
 
-
+/*  --------------------10. PREGUNTAS FRECUENTES (FAQ) -------------------- */
 .faq-wrapper {
     max-width: 800px;
     margin: 2rem auto;
@@ -645,19 +543,148 @@ summary::after {
     transition: transform 0.3s;
 }
 
-details[open] summary::after {
-    transform: rotate(45deg);
+details[open] summary::after { transform: rotate(45deg); }
+details p { padding: 0 1.5rem 1.5rem; color: #64748b; }
+
+/*  -------------------- 11. CONTACTO Y FORMULARIO --------------------*/
+#rehab-form {
+    background: var(--bg-light);
+    padding: 3rem;
+    border-radius: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-details p {
-    padding: 0 1.5rem 1.5rem;
-    color: #64748b;
+#rehab-form input, #rehab-form select, #rehab-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-family: inherit;
 }
 
-/* ----------------------- FOOTER ------------------------------- */
+/* =========================================
+   12. FOOTER
+   ========================================= */
 footer { 
     padding: 40px 0; 
     background: var(--secondary); 
     color: var(--white); 
     text-align: center; 
+}
+
+/* =========================================
+   13. MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Ajustes Scrollytelling Fases */
+    .fase h2 { font-size: 2.2rem; }
+    .fase-num { font-size: 5rem; }
+    .fase p { font-size: 1rem; }
+    .fase img { max-height: 40vh; }
+
+    /* Ajustes Comparativa */
+    .versus-grid { grid-template-columns: 1fr; }
+    .versus-card.winner { transform: none; order: -1; }
+    .header-content { flex-direction: column; align-items: flex-start; }
+    .section-title { font-size: 2rem; }
+}
+
+/* scrollytelling */
+
+/* -------------------- MEJORAS SCROLLYTELLING Y UI -------------------- */
+
+/* Barra de progreso lateral */
+.scroll-progress-vertical {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 200px;
+    background: rgba(2, 132, 199, 0.2);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.progress-fill {
+    width: 100%;
+    height: 0%;
+    background: var(--primary);
+    border-radius: 10px;
+    animation: fillVertical linear both;
+    animation-timeline: scroll(root);
+}
+
+@keyframes fillVertical {
+    to { height: 100%; }
+}
+
+/* Efecto Revelado de Secciones (Estilo Apple) */
+.scrolly-section {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--white);
+}
+
+/* Animación de opacidad y escala al entrar/salir */
+.container-reveal {
+    animation: revealScale linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+}
+
+@keyframes revealScale {
+    0% { opacity: 0; transform: scale(0.9); filter: blur(10px); }
+    25% { opacity: 1; transform: scale(1); filter: blur(0); }
+    75% { opacity: 1; transform: scale(1); filter: blur(0); }
+    100% { opacity: 0; transform: scale(1.1); filter: blur(10px); }
+}
+
+/* Ajuste Comparativa para Scrollytelling */
+#comparativa {
+    background: var(--secondary);
+    color: var(--white);
+    z-index: 10;
+}
+
+.versus-grid {
+    animation: slideInCards linear both;
+    animation-timeline: view();
+}
+
+@keyframes slideInCards {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Mejoras en el Hero Scroll Indicator */
+.mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid var(--white);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--white);
+    border-radius: 2px;
+    animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+    0% { transform: translateY(5px); opacity: 1; }
+    100% { transform: translateY(20px); opacity: 0; }
 }
