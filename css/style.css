@@ -41,7 +41,6 @@ img { max-width: 100%; display: block; }
     width: 90%;
     max-width: var(--max-width);
     margin: 0 auto;
-    max-height: 90vh;
 }
 
 .btn {
@@ -163,7 +162,7 @@ nav {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* -------------------- 4. SIDE NAV (scroll‑spy) -------------------- */
+/* -------------------- 4. SIDE NAV -------------------- */
 .side-nav {
     position: fixed;
     top: 50%;
@@ -261,15 +260,11 @@ nav {
 }
 .hero {
     height: 100vh;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--secondary);
-    overflow: hidden;
-    color: white;
-    text-align: center;
 }
+
 .hero-content {
     position: relative;
     z-index: 2;
@@ -758,12 +753,133 @@ nav {
 .t-right .author-info { text-align: right; }
 .t-right .author-info strong { color: var(--secondary); }
 
+/*-------------------- Seccion equipo -------------------------*/
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.team-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+}
+
+.team-info h3 {
+    color: var(--secondary);
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.team-info .colegiado {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.team-bio {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* -------------------- Seccion FAQ -----------------------*/
+
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+details {
+    background: var(--white);
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-color: var(--primary);
+}
+
+summary {
+    padding: 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--secondary);
+    position: relative;
+    list-style: none; /* Ocultar triángulo defecto */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 300;
+    transition: transform 0.3s;
+}
+
+details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    border-top: 1px solid transparent;
+}
+
+details[open] .faq-answer {
+    border-top-color: #f1f5f9;
+    padding-top: 1rem;
+}
+
 /* -------------------- 12. CONTACTO Y FOOTER -------------------- */
 #contacto-home {
-    view-timeline-name: --contacto-timeline;
-    view-timeline-axis: block;
-    padding: 4rem 0;
+    padding: 150px 0;
+    background: linear-gradient(to bottom, var(--bg-light), var(--white));
 }
+
 #rehab-form {
     background: white;
     padding: 3rem;
