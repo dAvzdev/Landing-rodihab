@@ -9,6 +9,33 @@
 </head>
 <body>
 
+        <!--1. HEADER-->
+    <header>
+        <div class="container header-flex">
+            <h1>
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Rodihab Fisioterapia" class="logo">
+                </a>
+            </h1>
+            <nav>
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                <label for="menu-toggle" class="menu-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
+                <ul class="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Planes</a></li>
+                    <li><a href="#">Sobre rodihab</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--2. SIDE-NAV-->
     <aside class="side-nav">
         <a href="#hero" class="nav-dot" data-section="hero" aria-label="Inicio">
             <span class="tooltip">Inicio</span>
@@ -42,32 +69,8 @@
         </a>
     </aside>
 
-
-    <header>
-        <div class="container header-flex">
-            <h1>
-                <a href="index.html">
-                    <img src="assets/images/logo.png" alt="Rodihab Fisioterapia" class="logo">
-                </a>
-            </h1>
-            <nav>
-                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-                <label for="menu-toggle" class="menu-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
-                </label>
-                <ul class="nav-links">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Planes</a></li>
-                    <li><a href="#">Sobre rodihab</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
 <main>
-
+    <!--3. HERO-->
     <section id="hero" class="hero">
         <ul class="hero-slider">
             <li><img src="assets/images/rehab1.png" alt="Foto 1"></li>
@@ -87,9 +90,8 @@
             <div class="mouse"><div class="wheel"></div></div>
         </div>
     </section>
-
+    <!--4. FASES-->
     <div id="fases-contenedor" class="deck-container">
-        
         <div class="deck-card card-1">
             <div class="card-content">
                 <span class="fase-num">01</span>
@@ -102,7 +104,6 @@
                 </div>
             </div>
         </div>
-
         <div class="deck-card card-2">
             <div class="card-content">
                 <span class="fase-num">02</span>
@@ -115,7 +116,6 @@
                 </div>
             </div>
         </div>
-
         <div class="deck-card card-3">
             <div class="card-content">
                 <span class="fase-num">03</span>
@@ -128,7 +128,6 @@
                 </div>
             </div>
         </div>
-
         <div class="deck-card card-4">
             <div class="card-content">
                 <span class="fase-num">04</span>
@@ -143,6 +142,7 @@
         </div>
     </div>
 
+    <!--5. COMPARATIVA-->
     <section id="comparativa" class="scrolly-section bg-light">
         <div class="container">
             <div class="comparativa-header">
@@ -168,7 +168,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="versus-card winner slide-in-right">
                     <div class="badge-winner">RECOMENDADO</div>
                     <h3>Método Rodihab</h3>
@@ -191,6 +190,7 @@
         </div>
     </section>
 
+    <!--6. POR QUE ELEGIR-->
     <section id="por-que-elegir" class="scrolly-section">
         <div class="container">
             <h2 class="section-title">¿Por qué elegir Rodihab?</h2>
@@ -218,7 +218,7 @@
             </div>
         </div>
     </section>
-
+    <!--7. COMO FUNCIONA-->
     <section id="como-funciona" class="scrolly-section bg-dark">
         <div class="container">
             <h2 class="section-title text-white">Tu recuperación en 3 pasos</h2>
@@ -243,6 +243,7 @@
         </div>
     </section>
 
+    <!--8. EQUIPO-->
     <section id="equipo" class="scrolly-section">
         <div class="container">
             <h2 class="section-title">Un equipo especializado a tu lado</h2>
@@ -263,7 +264,6 @@
                         Fisioterapeuta y entrenador con más de 12 años de experiencia en LCA. He trabajado como readaptador en fútbol de alto nivel. Formo a otros fisios en esta lesión y combino la visión sanitaria con la deportiva para una rehabilitación segura y eficaz.
                     </p>
                 </article>
-
                 <article class="team-card reveal-up" style="animation-delay: 0.2s;">
                     <div class="team-header">
                         <img src="assets/images/pablo.jpg" alt="Pablo Barrenechea" class="team-img">
@@ -280,43 +280,59 @@
         </div>
     </section>
 
-    <section id="precios" class="container reveal-zoom">
-        <div class="comparativa-header">
-            <h2 class="section-title">Planes de Recuperación</h2>
-            <p>Inversión en tu salud y retorno al deporte</p>
-        </div>
+    <!--9. PRECIOS-->
+    <section id="precios" class="scrolly-section bg-dark">
+        <div class="container reveal-up">
+            <div class="pricing-header">
+                <span class="eyebrow">Invierte en tu futuro</span>
+                <h2 class="section-title">Planes de Recuperación</h2>
+                <p>Acompañamiento profesional para cada etapa de tu lesión.</p>
+            </div>
 
-        <div class="pricing-grid">
-            <article class="price-card">
-                <h3>Mensual</h3>
-                <div class="price">180€<span>/mes</span></div>
-                <p>Ideal para un empujón puntual o probar nuestra metodología.</p>
-                <ul class="versus-list">
-                    <li class="positive"><span class="icon">✔</span> Evaluación inicial por videollamada</li>
-                    <li class="positive"><span class="icon">✔</span> Acceso a plataforma</li>
-                    <li class="positive"><span class="icon">✔</span> Soporte diario con tu fisioterapeuta</li>
-                    <li class="positive"><span class="icon">✔</span> Evaluaciones periódicas</li>
-                </ul>
-                <a href="#" class="btn btn-outline full-width">Empezar un mes</a>
-            </article>
+            <div class="pricing-track">
+                <article class="price-card" data-plan="mensual">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Mensual</h3>
+                            <div class="price-amount">
+                                <span class="currency">€</span>
+                                <span class="number">180</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <ul class="benefit-list">
+                                <li><i class="icon">✓</i> Evaluación inicial completa</li>
+                                <li><i class="icon">✓</i> Soporte diario vía App</li>
+                                <li><i class="icon">✓</i> Ajustes semanales</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Empezar ahora</a>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="price-card popular">
-                <div class="pop-badge">MÁS ELEGIDO</div>
-                <h3>Trimestral</h3>
-                <div class="price">150€<span>/mes</span></div>
-                <p>
-                    <strong style="color: var(--accent);">¡Ahorras 90€!</strong><br>
-                    La opción recomendada para una recuperación completa. Tres meses de acompañamiento...
-                </p>                
-                <ul class="versus-list">
-                    <li class="positive"><span class="icon">✔</span> <strong>Todo lo del mensual</strong></li>
-                    <li class="positive"><span class="icon">✔</span> Prioridad en soporte</li>
-                </ul>
-                <a href="#" class="btn btn-primary full-width">Elegir Plan Pro</a>
-            </article>
+                <article class="price-card popular" data-plan="trimestral">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="best-value">MÁS EFECTIVO</div>
+                            <h3>Trimestral</h3>
+                            <div class="price-amount">
+                                <span class="currency">€</span>
+                                <span class="number">150</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <p class="savings">Ahorras 90€ al trimestre</p>
+                            <ul class="benefit-list">
+                                <li><i class="icon">★</i> <strong>Todo lo del plan mensual</strong></li>
+                                <li><i class="icon">★</i> Prioridad en corrección de vídeos</li>
+                                <li><i class="icon">★</i> Test de fuerza mensuales</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Elegir Plan Pro</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
-
+    <!--10. TESTIMONIOS-->
     <section id="testimonios" class="scrolly-section bg-light">
         <div class="container">
             <h2 class="section-title">
@@ -367,8 +383,8 @@
         </div>
     </section>
 
-    <!-- Seccion FAQ-->
-<section id="faq" class="scrolly-section bg-light">
+    <!--11. Seccion FAQ-->
+    <section id="faq" class="scrolly-section bg-light">
         <div class="container reveal-up">
             <h2 class="section-title">Preguntas Frecuentes</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: var(--text-muted);">
@@ -428,7 +444,7 @@
         </div>
     </section>
 
-    <!--seccion contacto-->
+    <!--12. seccion contacto-->
     <section id="contacto-home" class="bg-light">
         <div class="container form-container reveal-up">
             <form id="rehab-form">
@@ -446,7 +462,7 @@
             </form>
         </div>
     </section>
-
+    <!--13. FOOTER-->
     <footer>
         <div class="container">
             <p>&copy; 2025 Rodihab. Rehabilitación online de rodilla.</p>
