@@ -654,7 +654,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 @media (max-width: 768px) {
 
     #fases-contenedor {
-        height: 600vh !important; 
+        height: 400vh !important; 
         padding: 0 !important;
 
     }
