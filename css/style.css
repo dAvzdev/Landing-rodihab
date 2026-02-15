@@ -716,11 +716,11 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 #comparativa {
     height: 300vh; 
     view-timeline-name: --comp-tl;
+    view-timeline-axis: block;
     background-color: var(--bg-light);
     position: relative;
     z-index: 20;
     overflow: clip; 
-    display: block; 
 }
 
 .sticky-frame {
@@ -732,22 +732,41 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
-    perspective: 1000px;
-    overflow: hidden; 
+    overflow: visible; 
+    z-index: 10;
+}
+
+#comparativa .section-title {
+    text-align: center; 
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fade-up-simple linear both;
+    animation-timeline: --comp-tl;
+    animation-range: entry 10% entry 30%;
 }
 
 .comparativa-header { 
-    text-align: center; margin-bottom: 3rem; 
-    animation: header-enter linear both, header-exit linear both;
+    text-align: center;
+    color: var(--secondary);
+    margin-bottom: 3rem; 
+    position: relative;
+    z-index: 100;
+    opacity: 0; 
+    animation: fade-in-header linear both;
     animation-timeline: --comp-tl;
-    animation-range: entry 10% entry 30%, contain 85% contain 100%;
+    animation-range: entry 5% entry 25%;
 }
 
-@keyframes header-enter { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes header-exit { to { opacity: 0; transform: translateY(-50px) scale(0.9); } }
+@keyframes fade-in-header {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
-.comparativa-header h2 { color: var(--secondary); font-size: clamp(2rem, 4vw, 3rem); }
-.comparativa-header p { color: var(--text-muted); font-size: 1.2rem; }
+@keyframes fade-out-header {
+    from { opacity: 1; transform: translateY(0); scale: 1; }
+    to   { opacity: 0; transform: translateY(-50px) scale(0.9); }
+}
+
 
 .versus-grid {
     display: flex; 
@@ -802,7 +821,9 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 @keyframes card-right-compare { to { transform: scale(1.1); box-shadow: 0 30px 60px rgba(2, 132, 199, 0.4); } }
 @keyframes card-left-exit { to { transform: translateX(-150%) rotate(-10deg); opacity: 0; } }
 @keyframes card-right-exit { to { transform: translateX(150%) rotate(10deg); opacity: 0; } }
+/* #endregion */
 
+/*#region--------------------------------------RESPONSIVE COMPARATIVA */
 @media (max-width: 768px) {
     .versus-grid { flex-direction: column; gap: 2rem; margin-top: 2rem; }
     .sticky-frame { height: auto; position: relative; padding: 4rem 0; }
