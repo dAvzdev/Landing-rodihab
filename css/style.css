@@ -528,6 +528,97 @@ header img.logo { height: 100px; width: auto; }
     z-index: 20;
     pointer-events: none;
 }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    #fases-contenedor {
+        height: auto !important; 
+        padding: 4rem 0;
+        view-timeline: none; 
+    }
+
+
+    .deck-container {
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem; 
+        padding: 0 5%;
+    }
+
+    .deck-card {
+        position: relative;
+        inset: auto;
+        height: auto;
+        min-height: 60vh; 
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 24px;
+        opacity: 1; 
+        transform: none;
+        animation: reveal-mobile linear both;
+        animation-timeline: view();
+        animation-range: entry 10% contain 40%;
+        background: rgba(30, 41, 59, 0.5); 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .card-1, .card-2, .card-3, .card-4 {
+        z-index: auto;
+        animation: reveal-mobile linear both;
+        animation-timeline: view();
+        animation-range: entry 5% contain 30%;
+    }
+
+    @keyframes reveal-mobile {
+        from { 
+            opacity: 0; 
+            transform: translateY(50px) scale(0.95); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0) scale(1); 
+        }
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column-reverse; 
+        gap: 1.5rem;
+        text-align: center;
+        width: 100%;
+        transform: none !important;
+        animation: none !important; 
+        opacity: 1 !important;
+    }
+
+    .img-wrapper img {
+        max-height: 30vh;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        transform: none !important; 
+    }
+
+    .text-group h2 {
+        font-size: 2rem;
+        color: var(--white);
+    }
+
+    .fase-num {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        color: var(--primary); 
+        opacity: 1;
+    }
+}
 /* #endregion */
 
 /* #region -------------------- 5. COMPARATIVA ---------------- */
@@ -1073,19 +1164,17 @@ header img.logo { height: 100px; width: auto; }
 /* #region -------------------- 9. PRECIOS -------------------- */
 
 #precios {
-    /* RIEL: Altura para detener el scroll y mostrar los precios con calma */
+
     height: 300vh;
     background: #0f172a; 
     view-timeline-name: --precios-tl;
     position: relative;
     z-index: 20;
-    
-    /* Conexión suave con la sección anterior */
     margin-top: -1px;
-    overflow: clip; /* Vital para el sticky */
+    overflow: clip; 
 }
 
-/* VAGÓN STICKY */
+/* STICKY */
 .pricing-sticky-wrapper {
     position: sticky;
     top: 0;
@@ -1095,7 +1184,7 @@ header img.logo { height: 100px; width: auto; }
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    perspective: 1000px; /* Profundidad 3D */
+    perspective: 1000px; 
 }
 
 /* HEADER */
@@ -1134,8 +1223,6 @@ header img.logo { height: 100px; width: auto; }
     text-align: center;
     position: relative;
     backdrop-filter: blur(10px);
-    
-    /* Estado inicial para animación */
     opacity: 0;
     transform: translateY(100px) rotateX(20deg) scale(0.9);
     transform-origin: center bottom;
@@ -1152,7 +1239,7 @@ header img.logo { height: 100px; width: auto; }
 .price-card.popular { animation-range: contain 20% contain 45%; }
 
 
-/* TARJETA POPULAR (DESTACADA) */
+/* TARJETA RECOMENDADA */
 .price-card.popular {
     background: linear-gradient(180deg, rgba(2,132,199,0.15) 0%, rgba(15,23,42,0.9) 100%);
     border-color: var(--primary); 
@@ -1179,7 +1266,7 @@ header img.logo { height: 100px; width: auto; }
 .benefit-list { text-align: left; margin: 2rem 0; list-style: none; color: #cbd5e1; font-size: 0.95rem; }
 .benefit-list li { margin-bottom: 1rem; display: flex; gap: 10px; line-height: 1.4; }
 .icon { color: var(--primary); font-weight: bold; flex-shrink: 0; }
-.popular .icon { color: var(--accent); } /* Iconos verdes en la popular */
+.popular .icon { color: var(--accent); } 
 
 /* BOTONES ESPECÍFICOS */
 .btn-outline { 
@@ -1189,7 +1276,7 @@ header img.logo { height: 100px; width: auto; }
 
 .price-card.popular .btn-primary { 
     width: 100%; display: block; box-shadow: 0 10px 30px rgba(2, 132, 199, 0.3); 
-    animation: pulse 3s infinite ease-in-out; /* Reutilizamos tu animación de pulso */
+    animation: pulse 3s infinite ease-in-out;
 }
 
 /* KEYFRAMES */
