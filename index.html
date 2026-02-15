@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rodihab | Especialistas en Rodilla</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="assets/favicons/favicon-32x32.png">
+    <link rel="stylesheet" href="/Landing-rodihab/css/style.css"> <link rel="icon" href="assets/favicons/favicon-32x32.png">
 </head>
 <body>
-
-        <!--1. HEADER-->
+<!--HEADER-->
     <header>
         <div class="container header-flex">
             <h1>
@@ -34,8 +32,7 @@
             </nav>
         </div>
     </header>
-
-    <!--2. SIDE-NAV-->
+<!--SIDE NAV-->
     <aside class="side-nav">
         <a href="#hero" class="nav-dot" data-section="hero" aria-label="Inicio">
             <span class="tooltip">Inicio</span>
@@ -69,230 +66,266 @@
         </a>
     </aside>
 
-<main>
-    <!--3. HERO-->
-    <section id="hero" class="hero">
-        <ul class="hero-slider">
-            <li><img src="assets/images/rehab1.png" alt="Foto 1"></li>
-            <li><img src="assets/images/rehab2.png" alt="Foto 2"></li>
-            <li><img src="assets/images/rehab3.png" alt="Foto 3"></li>
-            <li><img src="assets/images/4.jpg" alt="Foto 4"></li>
-        </ul>
-        <div class="container hero-content">
-            <h2>Rehabilitación online de rodilla especializada en LCA</h2>
-            <p class="hero-subtitle">
-                Recupérate desde donde quieras, con programas basados en ciencia y supervisión diaria.
-            </p>
-            <a href="#fases-contenedor" class="btn btn-primary">Empezar mi recuperación</a>
-        </div>
-        <div class="scroll-indicator">
-            <span>Descubre tu camino</span>
-            <div class="mouse"><div class="wheel"></div></div>
-        </div>
+    <main>
+<!--hero-->
+    <section id="hero">
+        <div class="hero-sticky-wrapper">
+            <ul class="hero-slider">
+                <li><img src="assets/images/rehab1.png" alt="Foto 1"></li>
+                <li><img src="assets/images/rehab2.png" alt="Foto 2"></li>
+                <li><img src="assets/images/rehab3.png" alt="Foto 3"></li>
+                <li><img src="assets/images/4.jpg" alt="Foto 4"></li>
+            </ul>
+            <div class="hero-content">
+                <h2>Rehabilitación online de rodilla especializada en LCA</h2>
+                <p class="hero-subtitle">
+                    Recupérate desde donde quieras, con programas basados en ciencia y supervisión diaria.
+                </p>
+                <a href="#fases-contenedor" class="btn btn-primary">Empezar mi recuperación</a>
+            </div>
+            <div class="scroll-indicator">
+                <span>Descubre tu camino</span>
+                <div class="mouse"><div class="wheel"></div></div>
+            </div>
+        </div> 
     </section>
-    <!--4. FASES-->
-    <div id="fases-contenedor" class="deck-container">
-        <div class="deck-card card-1">
-            <div class="card-content">
-                <span class="fase-num">01</span>
-                <div class="text-group">
-                    <h2>Post-operatorio</h2>
-                    <p>Controlar la inflamación y recuperar la extensión completa. Movilidad pasiva.</p>
-                </div>
-                <div class="img-wrapper">
-                    <img src="assets/images/1.jpg" alt="Fase 1">
-                </div>
-            </div>
-        </div>
-        <div class="deck-card card-2">
-            <div class="card-content">
-                <span class="fase-num">02</span>
-                <div class="text-group">
-                    <h2>Fortalecimiento</h2>
-                    <p>Ganancia de fuerza y estabilidad. Inicio de carga progresiva.</p>
-                </div>
-                <div class="img-wrapper">
-                    <img src="assets/images/2.jpg" alt="Fase 2">
-                </div>
-            </div>
-        </div>
-        <div class="deck-card card-3">
-            <div class="card-content">
-                <span class="fase-num">03</span>
-                <div class="text-group">
-                    <h2>Readaptación</h2>
-                    <p>Introducción al impacto, cambios de dirección y gestos deportivos.</p>
-                </div>
-                <div class="img-wrapper">
-                    <img src="assets/images/3.jpg" alt="Fase 3">
-                </div>
-            </div>
-        </div>
-        <div class="deck-card card-4">
-            <div class="card-content">
-                <span class="fase-num">04</span>
-                <div class="text-group">
-                    <h2>Vuelta al deporte</h2>
-                    <p>Entrenamiento completo con el equipo y alta deportiva definitiva.</p>
-                </div>
-                <div class="img-wrapper">
-                    <img src="assets/images/4.jpg" alt="Fase 4">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--5. COMPARATIVA-->
-    <section id="comparativa" class="scrolly-section bg-light">
-        <div class="container">
-            <div class="comparativa-header">
-                <h2 class="section-title">¿Por qué elegir online?</h2>
-                <p>La fisioterapia tradicional vs. La metodología Rodihab</p>
-            </div>
+<!--4. fases-->
+    <section id="fases-contenedor">
+        
+        <div class="deck-container">
             
-            <div class="versus-grid">
-                <div class="versus-card tradicional slide-in-left">
-                    <h3>Clínica Tradicional</h3>
-                    <ul class="versus-list">
-                        <li class="negative">
-                            <span class="icon">✖</span>
-                            <div><strong>Sesiones puntuales</strong><p>1 hora a la semana. Estás solo el resto del tiempo.</p></div>
-                        </li>
-                        <li class="negative">
-                            <span class="icon">✖</span>
-                            <div><strong>Desplazamientos</strong><p>Pierdes tiempo en ir y volver a la clínica.</p></div>
-                        </li>
-                        <li class="negative">
-                            <span class="icon">✖</span>
-                            <div><strong>Coste elevado</strong><p>Pagas por cada visita individual.</p></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="versus-card winner slide-in-right">
-                    <div class="badge-winner">RECOMENDADO</div>
-                    <h3>Método Rodihab</h3>
-                    <ul class="versus-list">
-                        <li class="positive">
-                            <span class="icon">✔</span>
-                            <div><strong>Seguimiento Diario 24/7</strong><p>Corregimos tus vídeos y dudas cada día.</p></div>
-                        </li>
-                        <li class="positive">
-                            <span class="icon">✔</span>
-                            <div><strong>Desde casa</strong><p>Entrena en tu gimnasio o salón con nuestra App.</p></div>
-                        </li>
-                        <li class="positive">
-                            <span class="icon">✔</span>
-                            <div><strong>Resultados Reales</strong><p>Basado en la evidencia científica más actual.</p></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--6. POR QUE ELEGIR-->
-    <section id="por-que-elegir" class="scrolly-section">
-        <div class="container">
-            <h2 class="section-title">¿Por qué elegir Rodihab?</h2>
-            <div class="features-grid">
-                <div class="feature-card reveal-up">
-                    <div class="icon-feat">🔬</div>
-                    <h3>Basado en ciencia</h3>
-                    <p>Siguiendo las guías de práctica clínica internacionales (KNGF, Aspetar).</p>
-                </div>
-                <div class="feature-card reveal-up" style="animation-delay: 0.1s;">
-                    <div class="icon-feat">👁️</div>
-                    <h3>Seguimiento real</h3>
-                    <p>Contacto directo con tu fisio online con respuesta en menos de 24h.</p>
-                </div>
-                <div class="feature-card reveal-up" style="animation-delay: 0.2s;">
-                    <div class="icon-feat">🛡️</div>
-                    <h3>Retorno seguro</h3>
-                    <p>Criterios objetivos en cada fase basados en consenso de expertos.</p>
-                </div>
-                <div class="feature-card reveal-up" style="animation-delay: 0.3s;">
-                    <div class="icon-feat">🏠</div>
-                    <h3>Flexibilidad total</h3>
-                    <p>Entrena donde y cuando quieras desde casa o tu gimnasio.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--7. COMO FUNCIONA-->
-    <section id="como-funciona" class="scrolly-section bg-dark">
-        <div class="container">
-            <h2 class="section-title text-white">Tu recuperación en 3 pasos</h2>
-            <div class="steps-wrapper">
-                <div class="connector-line"></div>
-                <article class="step-item">
-                    <span class="step-number">1</span>
-                    <h3>Entrevista inicial</h3>
-                    <p>Videollamada para conocerte, evaluar tu caso y resolver tus dudas.</p>
-                </article>
-                <article class="step-item">
-                    <span class="step-number">2</span>
-                    <h3>Programa personalizado</h3>
-                    <p>Plan de ejercicios por fases, adaptado a tu progreso, con vídeos explicativos.</p>
-                </article>
-                <article class="step-item">
-                    <span class="step-number">3</span>
-                    <h3>Seguimiento online</h3>
-                    <p>Soporte diario, corrección de ejercicios y evaluación mediante test validados.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!--8. EQUIPO-->
-    <section id="equipo" class="scrolly-section">
-        <div class="container">
-            <h2 class="section-title">Un equipo especializado a tu lado</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto; color: var(--text-muted);">
-                Combinamos experiencia clínica, investigación y deporte de alto rendimiento.
-            </p>
-
-            <div class="team-grid">
-                <article class="team-card reveal-up">
-                    <div class="team-header">
-                        <img src="assets/images/jaime.jpg" alt="Jaime Valdecantos" class="team-img">
-                        <div class="team-info">
-                            <h3>Jaime Valdecantos</h3>
-                            <span class="colegiado">Nº Col. 013248</span>
-                        </div>
+            <div class="deck-card card-1">
+                <div class="card-content">
+                    <span class="fase-num">01</span>
+                    <div class="text-group">
+                        <h2>Post-operatorio</h2>
+                        <p>Controlar la inflamación y recuperar la extensión completa. Movilidad pasiva.</p>
                     </div>
-                    <p class="team-bio">
-                        Fisioterapeuta y entrenador con más de 12 años de experiencia en LCA. He trabajado como readaptador en fútbol de alto nivel. Formo a otros fisios en esta lesión y combino la visión sanitaria con la deportiva para una rehabilitación segura y eficaz.
-                    </p>
-                </article>
-                <article class="team-card reveal-up" style="animation-delay: 0.2s;">
-                    <div class="team-header">
-                        <img src="assets/images/pablo.jpg" alt="Pablo Barrenechea" class="team-img">
-                        <div class="team-info">
-                            <h3>Pablo Barrenechea</h3>
-                            <span class="colegiado">Nº Col. 016682</span>
-                        </div>
+                    <div class="img-wrapper">
+                        <img src="assets/images/1.jpg" alt="Fase 1">
                     </div>
-                    <p class="team-bio">
-                        Especialista en tratamiento del dolor y rodilla. Doctorando en la URJC investigando sobre ejercicio y dolor. He acompañado desde deportistas de élite hasta procesos de artrosis, aplicando siempre la última evidencia científica.
-                    </p>
-                </article>
+                </div>
+            </div>
+
+            <div class="deck-card card-2">
+                <div class="card-content">
+                    <span class="fase-num">02</span>
+                    <div class="text-group">
+                        <h2>Fortalecimiento</h2>
+                        <p>Ganancia de fuerza y estabilidad. Inicio de carga progresiva.</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/images/2.jpg" alt="Fase 2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="deck-card card-3">
+                <div class="card-content">
+                    <span class="fase-num">03</span>
+                    <div class="text-group">
+                        <h2>Readaptación</h2>
+                        <p>Introducción al impacto, cambios de dirección y gestos deportivos.</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/images/3.jpg" alt="Fase 3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="deck-card card-4">
+                <div class="card-content">
+                    <span class="fase-num">04</span>
+                    <div class="text-group">
+                        <h2>Vuelta al deporte</h2>
+                        <p>Entrenamiento completo con el equipo y alta deportiva definitiva.</p>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/images/4.jpg" alt="Fase 4">
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </section>
+<!--comparativa-->
+    <section id="comparativa" class="scrolly-section">
+        <div class="sticky-frame">
+            <div class="container">
+                <div class="comparativa-header">
+                    <h2 class="section-title">¿Por qué elegir online?</h2>
+                    <p>La fisioterapia tradicional vs. La metodología Rodihab</p>
+                </div>
+                
+                <div class="versus-grid">
+                    <div class="versus-card tradicional">
+                        <h3>Clínica Tradicional</h3>
+                        <ul class="versus-list">
+                            <li>
+                                <span class="icon">✖</span>
+                                <div><strong>Sesiones puntuales</strong><p>1 hora a la semana. Estás solo el resto del tiempo.</p></div>
+                            </li>
+                            <li>
+                                <span class="icon">✖</span>
+                                <div><strong>Desplazamientos</strong><p>Pierdes tiempo en ir y volver a la clínica.</p></div>
+                            </li>
+                            <li>
+                                <span class="icon">✖</span>
+                                <div><strong>Coste elevado</strong><p>Pagas por cada visita individual.</p></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="versus-card winner">
+                        <div class="badge-winner">RECOMENDADO</div>
+                        <h3>Rodihab online</h3>
+                        <ul class="versus-list">
+                            <li>
+                                <span class="icon">✔</span>
+                                <div><strong>Seguimiento Diario 24/7</strong><p>Corregimos tus vídeos y dudas cada día.</p></div>
+                            </li>
+                            <li>
+                                <span class="icon">✔</span>
+                                <div><strong>Desde casa</strong><p>Entrena en tu gimnasio o salón con nuestra App.</p></div>
+                            </li>
+                            <li>
+                                <span class="icon">✔</span>
+                                <div><strong>Resultados Reales</strong><p>Basado en la evidencia científica más actual.</p></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+<!--por que elegir-->
+    <section id="por-que-elegir">
+        <div class="features-sticky-wrapper">
+            <div class="container">
+                <h2 class="section-title">¿Por qué elegir Rodihab?</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon-feat">🔬</div>
+                        <h3>Basado en ciencia</h3>
+                        <p>Siguiendo las guías de práctica clínica internacionales (KNGF, Aspetar).</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-feat">👁️</div>
+                        <h3>Seguimiento real</h3>
+                        <p>Contacto directo con tu fisio online con respuesta en menos de 24h.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-feat">🛡️</div>
+                        <h3>Retorno seguro</h3>
+                        <p>Criterios objetivos en cada fase basados en consenso de expertos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-feat">🏠</div>
+                        <h3>Flexibilidad total</h3>
+                        <p>Entrena donde y cuando quieras desde casa o tu gimnasio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--7. Como funciona-->
+    <section id="como-funciona" class="scrolly-section">
+        <div class="sticky-frame">
+            <div class="container">
+                <h2 class="section-title">Tu recuperación en 3 pasos</h2>
+                
+                <div class="steps-wrapper">
+                    <div class="connector-line"></div>
+                    
+                    <article class="step-item">
+                        <div class="step-number">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/>
+                                <rect x="2" y="6" width="14" height="12" rx="2"/>
+                            </svg>
+                        </div>
+                        <h3>Entrevista inicial</h3>
+                        <p>Videollamada para conocerte, evaluar tu caso y resolver tus dudas.</p>
+                    </article>
 
-    <!--9. PRECIOS-->
+                    <article class="step-item">
+                        <div class="step-number">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/>
+                                <path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/>
+                                <path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/>
+                            </svg>
+                        </div>
+                        <h3>Programa personalizado</h3>
+                        <p>Plan de ejercicios por fases, adaptado a tu progreso, con vídeos explicativos.</p>
+                    </article>
+
+                    <article class="step-item">
+                        <div class="step-number">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <h3>Seguimiento online</h3>
+                        <p>Soporte diario, corrección de ejercicios y evaluación mediante test validados.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--8. equipo-->
+    <section id="equipo">
+        <div class="team-sticky-wrapper">
+            <div class="container">
+                <h2 class="section-title">Un equipo especializado a tu lado</h2>
+                <p class="team-subtitle">
+                    Combinamos experiencia clínica, investigación y deporte de alto rendimiento.
+                </p>
+
+                <div class="team-grid">
+                    <article class="team-card">
+                        <div class="team-header">
+                            <img src="assets/images/jaime.jpg" alt="Jaime Valdecantos" class="team-img">
+                            <div class="team-info">
+                                <h3>Jaime Valdecantos</h3>
+                                <span class="colegiado">Nº Col. 013248</span>
+                            </div>
+                        </div>
+                        <p class="team-bio">
+                            Fisioterapeuta y entrenador con más de 12 años de experiencia en LCA. He trabajado como readaptador en fútbol de alto nivel.
+                        </p>
+                    </article>
+
+                    <article class="team-card">
+                        <div class="team-header">
+                            <img src="assets/images/pablo.jpg" alt="Pablo Barrenechea" class="team-img">
+                            <div class="team-info">
+                                <h3>Pablo Barrenechea</h3>
+                                <span class="colegiado">Nº Col. 016682</span>
+                            </div>
+                        </div>
+                        <p class="team-bio">
+                            Especialista en tratamiento del dolor y rodilla. Doctorando en la URJC investigando sobre ejercicio y dolor.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--9. precio-->
     <section id="precios" class="scrolly-section bg-dark">
-        <div class="container reveal-up">
-            <div class="pricing-header">
-                <span class="eyebrow">Invierte en tu futuro</span>
-                <h2 class="section-title">Planes de Recuperación</h2>
-                <p>Acompañamiento profesional para cada etapa de tu lesión.</p>
-            </div>
-
-            <div class="pricing-track">
-                <article class="price-card" data-plan="mensual">
-                    <div class="card-inner">
-                        <div class="card-front">
+        <div class="pricing-sticky-wrapper">
+            <div class="container reveal-up">
+                <div class="pricing-header">
+                    <span class="eyebrow">Invierte en tu futuro</span>
+                    <h2 class="section-title">Planes de Recuperación</h2>
+                    <p>Acompañamiento profesional para cada etapa de tu lesión.</p>
+                </div>
+                <div class="pricing-track">
+                    
+                    <article class="price-card" data-plan="mensual">
+                        <div class="card-inner">
                             <h3>Mensual</h3>
                             <div class="price-amount">
                                 <span class="currency">€</span>
@@ -300,151 +333,178 @@
                                 <span class="period">/mes</span>
                             </div>
                             <ul class="benefit-list">
-                                <li><i class="icon">✓</i> Evaluación inicial completa</li>
+                                <li><i class="icon">✓</i> Evaluación inicial</li>
                                 <li><i class="icon">✓</i> Soporte diario vía App</li>
                                 <li><i class="icon">✓</i> Ajustes semanales</li>
+                            <br>
+                            <br>
                             </ul>
                             <a href="#" class="btn btn-outline">Empezar ahora</a>
                         </div>
-                    </div>
-                </article>
-
-                <article class="price-card popular" data-plan="trimestral">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="best-value">MÁS EFECTIVO</div>
+                    </article>
+                    <article class="price-card popular" data-plan="trimestral">
+                        <div class="best-value">MÁS EFECTIVO</div>
+                        <div class="card-inner">
                             <h3>Trimestral</h3>
                             <div class="price-amount">
                                 <span class="currency">€</span>
-                                <span class="number">150</span>
-                                <span class="period">/mes</span>
+                                <span class="number">450</span>
+                                <span class="period">/3 meses</span>
                             </div>
                             <p class="savings">Ahorras 90€ al trimestre</p>
                             <ul class="benefit-list">
                                 <li><i class="icon">★</i> <strong>Todo lo del plan mensual</strong></li>
-                                <li><i class="icon">★</i> Prioridad en corrección de vídeos</li>
-                                <li><i class="icon">★</i> Test de fuerza mensuales</li>
+                                <li>La opción recomendada para una recuperación completa. Tres meses de acompañamiento, adaptación semanal y contacto directo.</li>
                             </ul>
-                            <a href="#" class="btn btn-primary">Elegir Plan Pro</a>
+                            <a href="#" class="btn btn-primary">Elegir Plan TRIMESTRAL</a>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
-    <!--10. TESTIMONIOS-->
+<!--10. testimonios-->
     <section id="testimonios" class="scrolly-section bg-light">
-        <div class="container">
-            <h2 class="section-title">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 10px; color: var(--primary);"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 11h.01"/></svg>
-                Historias de éxito
-            </h2>
+        
+        <div class="testimonials-sticky-wrapper">
             
-            <div class="chat-testimonials">
-                <div class="chat-bubble t-left reveal-chat">
-                    <div class="chat-content">
-                        <p>"Para mí cuarta y quinta operación de rodilla confié en la profesionalidad de Pablo. Eran 2 operaciones complicadas porque en la primera tuvieron que meterme un injerto de hueso en la tibia para poder el la siguiente operación reconstruir el cruzado anterior. La fisioterapia del pre operatorio sirvió mucho para preparar la pierna a poder recuperarse lo mejor y lo antes posible después de las operaciones. Lo demuestra que conseguí volver a caminar a los 10 días de la operación sin muletas. La rehabilitación de los siguientes meses fue muy bueno y la recuperación al final fue completa. 2 años después puedo confirmar de tener una rodilla fuerte y sana. He vuelto a practicar todos tipos de deportes sin problemas. Agradezco a Pablo haber seguido con cariño mi evolución y haberme aconsejado en cada momento."</p>
-                    </div>
-                    <div class="chat-author">
-                        <div class="avatar">M</div>
-                        <div class="author-info">
-                            <strong>Matia Mazza, 40 años</strong>
-                            <span>4ª y 5ª operación de rodilla</span>
+            <div class="container">
+                <h2 class="section-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 10px; color: var(--primary);"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 11h.01"/></svg>
+                    Historias de éxito
+                </h2>
+                
+                <div class="chat-testimonials">
+                    <div class="chat-bubble t-left">
+                        <div class="chat-content">
+                            <p>"Para mí cuarta y quinta operación de rodilla confié en la profesionalidad de Pablo... Conseguí volver a caminar a los 10 días."</p>
+                        </div>
+                        <div class="chat-author">
+                            <div class="avatar">M</div>
+                            <div class="author-info">
+                                <strong>Matia Mazza, 40 años</strong>
+                                <span>4ª y 5ª operación de rodilla</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="chat-bubble t-right reveal-chat">
-                    <div class="chat-content">
-                        <p>"Después de una reconstrucción de LCA y una sutura de menisco interno, empecé mi rehabilitación con Jaime y desde el primer día sentí que estaba en las mejores manos. Su trato fue siempre muy profesional, pero también muy humano y cercano, lo que hizo que cada etapa del proceso fuera mucho más llevadera. No solo me ayudó físicamente, sino que me motivó constantemente a volver al deporte, que era lo que más me preocupaba. Si alguna vez tuviera que pasar por algo parecido, no dudaría en volver a contar con él."</p>
-                    </div>
-                    <div class="chat-author">
-                        <div class="author-info">
-                            <strong>Lucía Prieto, 22 años</strong>
-                            <span>Reconstrucción LCA y Menisco</span>
+                    <div class="chat-bubble t-right">
+                        <div class="chat-content">
+                            <p>"Empecé mi rehabilitación con Jaime y desde el primer día sentí que estaba en las mejores manos. Me motivó constantemente a volver al deporte."</p>
                         </div>
-                        <div class="avatar" style="background: var(--accent);">L</div>
+                        <div class="chat-author">
+                            <div class="author-info">
+                                <strong>Lucía Prieto, 22 años</strong>
+                                <span>Reconstrucción LCA y Menisco</span>
+                            </div>
+                            <div class="avatar" style="background: var(--accent);">L</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="chat-bubble t-left reveal-chat">
-                    <div class="chat-content">
-                        <p>"Tuve un proceso de rehabilitación tras una operación de menisco y la experiencia fue magnífica. Tanto en lo físico —ejercicios, recuperación— como en lo personal, gracias a la atención tan cercana y personalizada de Pablo. El seguimiento fue excelente, no solo durante la rehabilitación, sino también posteriormente. ¡Lo recomiendo totalmente!"</p>
-                    </div>
-                    <div class="chat-author">
-                        <div class="avatar">A</div>
-                        <div class="author-info">
-                            <strong>Ana Arias, 51 años</strong>
-                            <span>Operación de Menisco</span>
+                    <div class="chat-bubble t-left">
+                        <div class="chat-content">
+                            <p>"La experiencia fue magnífica. Tanto en lo físico como en lo personal. El seguimiento fue excelente, incluso posteriormente."</p>
+                        </div>
+                        <div class="chat-author">
+                            <div class="avatar">A</div>
+                            <div class="author-info">
+                                <strong>Ana Arias, 51 años</strong>
+                                <span>Operación de Menisco</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!--11. Seccion FAQ-->
+<!--11. FAQ-->
     <section id="faq" class="scrolly-section bg-light">
-        <div class="container reveal-up">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-muted);">
-                Resolvemos las dudas más comunes sobre la rehabilitación online
-            </p>
+        <div class="container">
+            
+            <div class="faq-layout">
+                <div class="faq-header-sticky">
+                    <h2 class="section-title">Preguntas Frecuentes</h2>
+                    <p>Resolvemos las dudas más comunes sobre la rehabilitación online.</p>
+                    <div class="faq-decoration">?</div>
+                </div>
 
-            <div class="faq-container">
-                <details>
-                    <summary>¿En qué consiste la rehabilitación online de LCA?</summary>
-                    <div class="faq-answer">
-                        Se inicia con una entrevista por videollamada para evaluar tu caso. Diseñamos un programa por fases con vídeos explicativos, seguimiento diario y test de progreso objetivos, basados en guías clínicas y criterios de retorno al deporte.
-                    </div>
-                </details>
+                <div class="faq-list">
+                    
+                    <details>
+                        <summary>
+                            <span>¿En qué consiste la rehabilitación online de LCA?</span>
+                            <div class="icon-toggle">+</div>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Se inicia con una entrevista por videollamada para evaluar tu caso. Diseñamos un programa por fases con vídeos explicativos, seguimiento diario y test de progreso objetivos, basados en guías clínicas y criterios de retorno al deporte.</p>
+                        </div>
+                    </details>
 
-                <details>
-                    <summary>¿Cómo se realiza el seguimiento a distancia?</summary>
-                    <div class="faq-answer">
-                        Tu fisioterapeuta revisa tus ejercicios mediante vídeo o mensajería, corrige la técnica y adapta el plan según tu evolución. Realizamos evaluaciones periódicas con cuestionarios validados y test de fuerza.
-                    </div>
-                </details>
+                    <details>
+                        <summary>
+                            <span>¿Cómo se realiza el seguimiento a distancia?</span>
+                            <div class="icon-toggle">+</div>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Tu fisioterapeuta revisa tus ejercicios mediante vídeo o mensajería, corrige la técnica y adapta el plan según tu evolución. Realizamos evaluaciones periódicas con cuestionarios validados y test de fuerza.</p>
+                        </div>
+                    </details>
 
-                <details>
-                    <summary>¿Puedo hacer el programa si no tengo material o gimnasio?</summary>
-                    <div class="faq-answer">
-                        Sí. Adaptamos cada fase a tus recursos (casa o gimnasio). Indicamos el material mínimo útil como bandas elásticas o minibands.
-                    </div>
-                </details>
+                    <details>
+                        <summary>
+                            <span>¿Puedo hacer el programa si no tengo material o gimnasio?</span>
+                            <div class="icon-toggle">+</div>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Sí. Adaptamos cada fase a tus recursos (casa o gimnasio). Indicamos el material mínimo útil como bandas elásticas o minibands.</p>
+                        </div>
+                    </details>
 
-                <details>
-                    <summary>¿Cuánto dura el proceso de rehabilitación?</summary>
-                    <div class="faq-answer">
-                        En una reconstrucción de LCA, suele durar entre 9 y 12 meses. El proceso se divide en fases progresivas: control del dolor, movilidad, fuerza, control neuromuscular y criterios de retorno al deporte.
-                    </div>
-                </details>
+                    <details>
+                        <summary>
+                            <span>¿Cuánto dura el proceso de rehabilitación?</span>
+                            <div class="icon-toggle">+</div>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>En una reconstrucción de LCA, suele durar entre 9 y 12 meses. El proceso se divide en fases progresivas: control del dolor, movilidad, fuerza, control neuromuscular y criterios de retorno al deporte.</p>
+                        </div>
+                    </details>
 
-                <details>
-                    <summary>¿Es igual de efectiva que una rehabilitación presencial?</summary>
-                    <div class="faq-answer">
-                        Sí, siempre que sea guiada y estructurada. La evidencia demuestra que la tele-rehabilitación permite seguimiento continuo y resultados comparables a la presencial.
-                    </div>
-                </details>
+                    <details>
+                        <summary>
+                            <span>¿Es igual de efectiva que una rehabilitación presencial?</span>
+                            <div class="icon-toggle">+</div>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Sí, siempre que sea guiada y estructurada. La evidencia demuestra que la tele-rehabilitación permite seguimiento continuo y resultados comparables a la presencial.</p>
+                        </div>
+                    </details>
 
-                <details>
-                    <summary>¿Es siempre necesaria la cirugía en LCA?</summary>
-                    <div class="faq-answer">
-                        No siempre. Depende de tu actividad y estabilidad. Muchos pacientes recuperan función con tratamiento conservador (copers). Recomendamos esperar al menos un mes tras la lesión para valorar junto a tu traumatólogo.
-                    </div>
-                </details>
+                    <details>
+                        <summary>
+                            <span>¿Es siempre necesaria la cirugía en LCA?</span>
+                            <div class="icon-toggle">+</div>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>No siempre. Depende de tu actividad y estabilidad. Muchos pacientes recuperan función con tratamiento conservador (copers). Recomendamos esperar al menos un mes tras la lesión para valorar junto a tu traumatólogo.</p>
+                        </div>
+                    </details>
 
-                <details>
-                    <summary>¿Cuándo puedo volver a correr o hacer deporte?</summary>
-                    <div class="faq-answer">
-                        El retorno depende de criterios objetivos (fuerza, estabilidad), no solo del tiempo. Orientativamente: carrera a las 10-12 semanas y deporte competitivo entre 9-12 meses.
-                    </div>
-                </details>
+                    <details>
+                        <summary>
+                            <span>¿Cuándo puedo volver a correr o hacer deporte?</span>
+                            <div class="icon-toggle">+</div>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>El retorno depende de criterios objetivos (fuerza, estabilidad), no solo del tiempo. Orientativamente: carrera a las 10-12 semanas y deporte competitivo entre 9-12 meses.</p>
+                        </div>
+                    </details>
+
+                </div>
             </div>
         </div>
     </section>
-
-    <!--12. seccion contacto-->
+<!--12. contacto-->
     <section id="contacto-home" class="bg-light">
         <div class="container form-container reveal-up">
             <form id="rehab-form">
@@ -462,12 +522,12 @@
             </form>
         </div>
     </section>
-    <!--13. FOOTER-->
+<!--13. footer-->
     <footer>
         <div class="container">
             <p>&copy; 2025 Rodihab. Rehabilitación online de rodilla.</p>
         </div>
     </footer>
-
+    </main>
 </body>
 </html>
