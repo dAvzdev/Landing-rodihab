@@ -155,7 +155,7 @@ display: flex;
 align-items: center;
 }
 header img.logo { 
-    height: 160px; 
+    height: 140px; 
     width: auto; 
 }
 
@@ -306,27 +306,51 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /* #region -----------------------------   RESPONSIVE SIDE-NAV*/
 
 @media (max-width: 768px) {
-:root {
-    --nav-right: 0;             
-    --nav-padding: 30px 8px 30px 8px; 
-    --nav-gap: 25px;
-    --dot-size: 12px;
-    --dot-expand: 40px;
-    --dot-translate: 0px;        
-}
+    :root {
+        --nav-right: 10px;
+        --nav-padding: 20px 6px; 
+        --nav-gap: 20px;
+        --dot-size: 10px;
+        --dot-expand: 30px;
+    }
 
-.side-nav {
-    background: rgba(15, 23, 42, 0.2);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255,255,255,0.02);
-    overflow: visible;
-}
+    .side-nav {
+        background: rgba(15, 23, 42, 0.6); 
+        backdrop-filter: blur(15px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        right: var(--nav-right);
+        padding: var(--nav-padding);
+        touch-action: pan-y; 
+    }
 
-.nav-dot .tooltip {
-    right: 22px;                 
-    font-size: 0.7rem;
-    padding: 3px 8px;
-}
+    /* Área de contacto ampliada */
+    .nav-dot {
+        width: 30px; 
+        height: var(--dot-size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent; 
+    }
+
+    /* El punto visual real */
+    .nav-dot::before {
+        content: '';
+        width: var(--dot-size);
+        height: 100%;
+        background: var(--dot-bg);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-dot .tooltip {
+        display: none; 
+    }
+
+    .nav-dot:active::before {
+        background: var(--primary);
+        transform: scale(1.5);
+    }
 }
 
 /* #endregion*/
