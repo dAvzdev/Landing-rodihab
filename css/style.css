@@ -306,53 +306,74 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /* #endregion */
 
 /* #region -----------------------------   RESPONSIVE SIDE-NAV*/
-
 @media (max-width: 768px) {
     :root {
-        --nav-right: 10px;
-        --nav-padding: 20px 6px; 
+        --nav-right: -5px; /* Asoma ligeramente */
+        --nav-padding: 25px 10px;
         --nav-gap: 20px;
-        --dot-size: 10px;
-        --dot-expand: 30px;
+        --dot-size: 8px;
+        --dot-expand: 35px; 
+        --dot-translate: -8px; 
     }
 
     .side-nav {
-        background: rgba(15, 23, 42, 0.6); 
-        backdrop-filter: blur(15px) saturate(150%);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-right: none;
+        border-radius: 40px 0 0 40px;
         right: var(--nav-right);
         padding: var(--nav-padding);
-        touch-action: pan-y; 
+        width: 32px;
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: visible; 
     }
 
-    /* Área de contacto ampliada */
+    @keyframes dot-elastic {
+        0%, 100% {
+            height: var(--dot-size);
+            width: var(--dot-size);
+            background: var(--dot-bg);
+            transform: translateX(0);
+            border-radius: 50%;
+        }
+        50% {
+            height: var(--dot-expand); 
+            width: calc(var(--dot-size) + 4px);
+            background: var(--dot-active-bg);
+            box-shadow: 0 0 15px var(--dot-active-bg);
+            transform: translateX(var(--dot-translate));
+            border-radius: 20px;
+        }
+    }
+
     .nav-dot {
-        width: 30px; 
-        height: var(--dot-size);
+        width: 100%;
         display: flex;
-        align-items: center;
         justify-content: center;
-        background: transparent; 
+        align-items: center;
     }
 
-    /* El punto visual real */
-    .nav-dot::before {
+    .nav-dot::after {
         content: '';
-        width: var(--dot-size);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
         height: 100%;
-        background: var(--dot-bg);
-        border-radius: 20px;
-        transition: all 0.3s ease;
+        background: radial-gradient(ellipse at left, rgba(2, 132, 199, 0.15) 0%, transparent 70%);
+        transform: translateY(-50%) translateX(100%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
     }
 
-    .nav-dot .tooltip {
-        display: none; 
+
+    .nav-dot:nth-child(n) {
+        animation-name: dot-elastic;
     }
 
-    .nav-dot:active::before {
-        background: var(--primary);
-        transform: scale(1.5);
-    }
+    .nav-dot .tooltip { display: none; }
 }
 
 /* #endregion*/
