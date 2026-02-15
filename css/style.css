@@ -312,8 +312,8 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
         --nav-padding: 25px 10px;
         --nav-gap: 20px;
         --dot-size: 8px;
-        --dot-expand: 35px; 
-        --dot-translate: -8px; 
+        --dot-expand: 40px; 
+        --dot-translate: -4px; 
     }
 
     .side-nav {
@@ -347,11 +347,28 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
         }
     }
 
+    .nav-dot::before {
+        content: '';
+        position: absolute;
+        right: -10px; 
+        height: 100%;
+        width: 0;
+        background: inherit; 
+        backdrop-filter: blur(10px);
+        transition: width 0.3s ease;
+        z-index: -1;
+    }
+
     .nav-dot {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        animation-name: dot-elastic;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
     }
 
     .nav-dot::after {
