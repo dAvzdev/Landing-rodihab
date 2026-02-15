@@ -1878,3 +1878,10 @@ footer {
 footer p { margin: 0; }
 
 /* #endregion */
+
+.no-scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    filter: none !important;
+}

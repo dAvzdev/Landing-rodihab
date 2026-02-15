@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Rodihab</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/favicons/favicon-32x32.png">
+</head>
+<body class="bg-light"> 
+    <header>
+        <div class="container header-flex">
+            <h1>
+                <a href="index.html">
+                    <img src="../assets/images/logo.png" alt="Rodihab Fisioterapia" class="logo">
+                </a>
+            </h1>
+            <nav>
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                <label for="menu-toggle" class="menu-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                    <li><a href="./planes.html">Planes</a></li>
+                    <li><a href="#">Sobre rodihab</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section style="padding-top: 140px; text-align: center;">
+            <div class="container">
+                <h2 class="section-title">Estamos aquí para ayudarte</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem;">
+                    Cuéntanos qué te ocurre en la rodilla y nuestro equipo de especialistas se pondrá en contacto contigo en menos de 24 horas.
+                </p>
+            </div>
+        </section>
+
+        <section id="contacto-home" style="min-height: auto; padding: 40px 0 100px;">
+            <div class="container">
+                <form id="rehab-form" style="opacity: 1; transform: none; animation: none;">
+                    <h3>Envíanos un mensaje 🦵</h3>
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="email" placeholder="Email de contacto" required>
+                    <select required>
+                        <option value="">Selecciona tu lesión</option>
+                        <option value="lca">Rotura LCA</option>
+                        <option value="menisco">Menisco</option>
+                        <option value="tendon">Tendinopatía</option>
+                        <option value="otro">Otros / Dolor Crónico</option>
+                    </select>
+                    <textarea placeholder="¿Cómo podemos ayudarte con tu rehabilitación?"></textarea>
+                    <button type="submit" class="btn btn-primary full-width">Enviar solicitud gratuita</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rodihab. Rehabilitación online de rodilla.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
