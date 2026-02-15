@@ -31,6 +31,8 @@ html {
     scrollbar-width: none;
     scroll-behavior: smooth; 
     overflow-x: hidden;
+    scroll-snap-type: y proximity; 
+    scroll-behavior: smooth;
 }
 
 body {
@@ -86,7 +88,8 @@ img { max-width: 100%; display: block; }
 .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
 .full-width { width: 100%; display: block; margin-top: 1rem; }
 
-section { position: relative; }
+section { position: relative; scroll-snap-align: start;
+    scroll-snap-stop: always;}
 .section-title { margin-bottom: 2rem; font-size: 2.5rem; }
 .text-white { color: var(--white); }
 .bg-light { background: var(--bg-light); }
