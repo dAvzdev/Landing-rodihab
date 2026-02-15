@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rodihab.com/sitemap.xml
