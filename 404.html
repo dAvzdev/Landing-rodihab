@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 | Rodihab</title>
+    <link rel="stylesheet" href="./css/style.css"> <link rel="icon" href="./assets/favicons/favicon-32x32.png">
+    <style>
+        .error-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .error-number {
+            font-size: clamp(6rem, 15vw, 12rem); 
+            font-weight: 900;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 3.5rem; 
+        }
+
+        .broken-part {
+            display: inline-block;
+            transform-origin: bottom right;
+            animation: break-bone 2s ease-out infinite alternate;
+            color: var(--primary);
+            -webkit-text-stroke: 0;
+        }
+
+        @keyframes break-bone {
+            0% { transform: rotate(0deg) translate(0, 0); }
+            10% { transform: rotate(15deg) translate(10px, 5px); }
+            20% { transform: rotate(12deg) translate(8px, 4px); }
+            100% { transform: rotate(15deg) translate(10px, 5px); } 
+        }
+
+        .error-content {
+            z-index: 2;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-top: -50px; 
+        }
+
+        .error-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="error-page">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.2), transparent 70%); z-index: 0;"></div>
+
+        <div class="error-number">
+            4<span class="broken-part">0</span>4
+        </div>
+
+        <div class="error-content">
+            <span class="error-icon">🩹</span>
+            <h1 class="section-title" style="margin-bottom: 1rem; font-size: 2rem;">¡Ups! Enlace Roto</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem;">
+                Parece que has sufrido una <strong>luxación de URL</strong>. La página que buscas no existe o se está recuperando de una lesión.
+            </p>
+            
+            <a href="/" class="btn btn-primary">
+                Volver a poner la rodilla en su sitio
+            </a>
+            <br><br>
+            <a href="./pages/contacto.html" style="color: var(--primary); font-size: 0.9rem; text-decoration: underline;">
+                Reportar este dolor al equipo
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
