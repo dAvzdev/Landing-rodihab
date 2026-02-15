@@ -155,7 +155,7 @@ display: flex;
 align-items: center;
 }
 header img.logo { 
-    height: 180px; 
+    height: 160px; 
     width: auto; 
 }
 
@@ -163,14 +163,15 @@ header img.logo {
 display: flex; 
 flex-direction: column; 
 justify-content: space-between;
-width: 20px; 
+width: 22px; 
 height: 16px; 
 cursor: pointer; 
 z-index: 1002;
 position: relative;
+
 }
 .bar {
-height: 2px; 
+height: 3px; 
 width: 100%; 
 background-color: white;
 border-radius: 10px;
@@ -198,7 +199,7 @@ z-index: 1001;
 
 /*aspa 1*/
 .menu-checkbox:checked ~ .menu-button .bar:nth-child(1) {
-transform: translateY(7px) rotate(45deg); background-color: var(--white);
+transform: translateY(6px) rotate(45deg); background-color: var(--white);
 }
 /*aspa 2 desaparece */
 .menu-checkbox:checked ~ .menu-button .bar:nth-child(2) {
@@ -1322,7 +1323,6 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /* #endregion */
 
 /* #region -------------------- 9. PRECIOS -------------------- */
-
 #precios {
 
     height: 300vh;
@@ -1446,9 +1446,10 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
         transform: translateY(0) rotateX(0) scale(1); 
     }
 }
+/* #endregion */
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+/* #region ------------------------------ RESPONSIVE PRECIOS */
+@media (max-width: 768px) {
     #precios { height: auto; }
     .pricing-sticky-wrapper { position: relative; height: auto; padding: 4rem 0; display: block; }
     .pricing-track { flex-direction: column; align-items: center; gap: 2rem; }
