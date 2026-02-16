@@ -141,7 +141,7 @@ header img.logo {
 
 /* #region ------------------------------RESPONSIVE HEADER */
 /* hamburguer menu */
-@media (max-width: 768px){
+@media (max-width: 480px){
 
 header {
 position: fixed; 
@@ -306,7 +306,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /* #endregion */
 
 /* #region -----------------------------   RESPONSIVE SIDE-NAV*/
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     :root {
         --nav-right: -5px; /* Asoma ligeramente */
         --nav-padding: 25px 10px;
@@ -720,7 +720,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /* #endregion*/
 
 /* #region ----------------------------- RESPONSIVE FASES */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 
     #fases-contenedor {
         height: 400vh !important; 
@@ -893,7 +893,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /* #endregion */
 
 /*#region--------------------------------------RESPONSIVE COMPARATIVA */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .versus-grid { flex-direction: column; gap: 2rem; margin-top: 2rem; }
     .sticky-frame { height: auto; position: relative; padding: 4rem 0; }
     #comparativa { height: auto; }
@@ -1007,7 +1007,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     #por-que-elegir { height: auto; padding: 4rem 0; margin-top: 0; }
     .features-sticky-wrapper { 
         position: relative; 
@@ -1192,7 +1192,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 
 /* RESPONSIVE*/
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     #como-funciona {
         height: 300vh;
         padding: 0;
@@ -1375,7 +1375,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 .team-bio { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     #equipo { height: auto; }
     .team-sticky-wrapper { position: relative; height: auto; padding: 4rem 0; }
     .team-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -1517,7 +1517,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /* #endregion */
 
 /* #region ------------------------------ RESPONSIVE PRECIOS */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     #precios { height: auto; }
     .pricing-sticky-wrapper { position: relative; height: auto; padding: 4rem 0; display: block; }
     .pricing-track { flex-direction: column; align-items: center; gap: 2rem; }
@@ -1643,7 +1643,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /* #endregion */
 
 /* #region ------------------------------------ RESPONSIVE TESTIMONIOS */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     #testimonios { height: auto; padding: 100px 0; }
     .testimonials-sticky-wrapper { position: relative; height: auto; display: block; }
     
