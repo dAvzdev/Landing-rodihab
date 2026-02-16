@@ -439,15 +439,6 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     }
 }
 
-/* Animaciones del Carrusel (Internas) */
-@keyframes fadeSlide {
-    0% { opacity: 0; z-index: 1; }
-    5% { opacity: 1; z-index: 2; }   
-    25% { opacity: 1; z-index: 2; } 
-    30% { opacity: 0; z-index: 1; } 
-    100% { opacity: 0; z-index: 1; }
-}
-
 @keyframes kenBurns {
     0% { transform: scale(1.5); }
     100% { transform: scale(1); } 
@@ -468,7 +459,17 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     inset: 0;
     list-style: none;
     opacity: 0;
-    animation: fadeSlide 18s infinite ease-in-out; 
+    animation: fadeSlide 20s infinite ease-in-out; 
+}
+
+
+/* Animaciones del Carrusel (Internas) */
+@keyframes fadeSlide {
+  0%   { opacity: 0; z-index: 1; }
+  4%   { opacity: 1; z-index: 2; }
+  20%  { opacity: 1; z-index: 2; }
+  24%  { opacity: 0; z-index: 1; }
+  100% { opacity: 0; z-index: 1; }
 }
 
 /* Delays del carrusel */
@@ -482,7 +483,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
+    opacity: 0.4;
     transform: scale(1);
     animation: kenBurns 20s infinite alternate ease-in-out;
 }
@@ -546,11 +547,6 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 
 @keyframes fade-out-quick {
     to { opacity: 0; transform: translate(-50%, 20px); }
-}
-
-@keyframes wheel { 
-    0% { transform: translateY(0); opacity: 1; } 
-    100% { transform: translateY(12px); opacity: 0; } 
 }
 
 .mouse { 
