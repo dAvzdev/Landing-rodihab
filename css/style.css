@@ -1785,7 +1785,7 @@ details[open] .icon-toggle {
 /* #endregion*/
 
 /*  #region ----------------------------RESPONSIVE FAQ */
-@media (max-width: 900px) {
+@media (max-width: 480px) {
     .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
     
     .faq-header-sticky { 
