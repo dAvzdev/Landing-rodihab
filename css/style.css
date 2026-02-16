@@ -439,6 +439,20 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     }
 }
 
+/* Animaciones del Carrusel (Internas) */
+@keyframes fadeSlide {
+    0% { opacity: 0; z-index: 1; }
+    5% { opacity: 1; z-index: 2; }   
+    25% { opacity: 1; z-index: 2; } 
+    30% { opacity: 0; z-index: 1; } 
+    100% { opacity: 0; z-index: 1; }
+}
+
+@keyframes kenBurns {
+    0% { transform: scale(1.5); }
+    100% { transform: scale(1); } 
+}
+
 /*carrusell*/
 .hero-slider {
     position: absolute;
@@ -454,15 +468,15 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     inset: 0;
     list-style: none;
     opacity: 0;
-    animation: fadeSlide 16s infinite ease-in-out; 
+    animation: fadeSlide 18s infinite ease-in-out; 
 }
 
 /* Delays del carrusel */
 .hero-slider li:nth-child(1) { animation-delay: 0s; }
 .hero-slider li:nth-child(2) { animation-delay: 4s; }
 .hero-slider li:nth-child(3) { animation-delay: 8s; }
-.hero-slider li:nth-child(4) { animation-delay: 12s; }
-.hero-slider li:nth-child(5) { animation-delay: 16s}
+.hero-slider li:nth-child(4) { animation-delay: 12s;}
+.hero-slider li:nth-child(5) { animation-delay: 16s;}
 
 .hero-slider img {
     width: 100%;
@@ -473,19 +487,6 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     animation: kenBurns 20s infinite alternate ease-in-out;
 }
 
-/* Animaciones del Carrusel (Internas) */
-@keyframes fadeSlide {
-    0% { opacity: 0; z-index: 1; }
-    5% { opacity: 1; z-index: 2; }   
-    25% { opacity: 1; z-index: 2; } 
-    30% { opacity: 0; z-index: 1; } 
-    100% { opacity: 0; z-index: 1; }
-}
-
-@keyframes kenBurns {
-    0% { transform: scale(1.5); }
-    100% { transform: scale(1); } 
-}
 
 .hero-content {
     position: relative; 
@@ -547,6 +548,11 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     to { opacity: 0; transform: translate(-50%, 20px); }
 }
 
+@keyframes wheel { 
+    0% { transform: translateY(0); opacity: 1; } 
+    100% { transform: translateY(12px); opacity: 0; } 
+}
+
 .mouse { 
     width: 26px; 
     height: 40px; 
@@ -565,10 +571,6 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     animation: wheel 2s infinite; 
 }
 
-@keyframes wheel { 
-    0% { transform: translateY(0); opacity: 1; } 
-    100% { transform: translateY(12px); opacity: 0; } 
-}
 
 /* #endregion */
 
