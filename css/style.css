@@ -465,11 +465,11 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 
 /* Animaciones del Carrusel (Internas) */
 @keyframes fadeSlide {
-  0%   { opacity: 0; z-index: 1; }
-  4%   { opacity: 1; z-index: 2; }
-  20%  { opacity: 1; z-index: 2; }
-  24%  { opacity: 0; z-index: 1; }
-  100% { opacity: 0; z-index: 1; }
+    0%   { opacity: 0; z-index: 1; }
+    4%   { opacity: 1; z-index: 2; }
+    20%  { opacity: 1; z-index: 2; }
+    24%  { opacity: 0; z-index: 1; }
+    100% { opacity: 0; z-index: 1; }
 }
 
 /* Delays del carrusel */
@@ -565,6 +565,11 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
     border-radius: 2px; 
     margin-top: 6px; 
     animation: wheel 2s infinite; 
+}
+
+@keyframes wheel { 
+    0% { transform: translateY(0); opacity: 1; } 
+    100% { transform: translateY(12px); opacity: 0; } 
 }
 
 
@@ -1359,7 +1364,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 .team-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
 
 .team-img { 
-    width: 140px; height: 140px; border-radius: 50%; object-fit: cover; 
+    width: 120px; height: 140px; border-radius: 50%; object-fit: cover; 
     border: 3px solid var(--primary); 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
@@ -1525,6 +1530,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 
 #testimonios {
     height: 300vh; 
+    top: 100px;
     background: var(--bg-light);
     view-timeline-name: --tests-tl;
     position: relative;
@@ -1545,14 +1551,13 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /*ESTILO STICKY PARA PARAR EL SCROLL*/
 .testimonials-sticky-wrapper {
     position: sticky;
-    top: 0;
-    height: 120vh;
+    top: -100px;
+    height: 150vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 200px;
 }
 
 .chat-testimonials { 
@@ -1674,7 +1679,7 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 /* STICKY  */
 .faq-header-sticky {
     position: sticky;
-    top: 150px; 
+    top: 100px; 
     text-align: left;
 }
 
