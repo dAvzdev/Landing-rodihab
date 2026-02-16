@@ -1636,8 +1636,9 @@ transform: translateY(-7px) rotate(-45deg); background-color: var(--white);
 
 .author-info strong { display: block; font-size: 0.9rem; }
 .author-info span { font-size: 0.8rem; color: var(--text-muted); }
+/* #endregion */
 
-/* Responsive */
+/* #region ------------------------------------ RESPONSIVE TESTIMONIOS */
 @media (max-width: 768px) {
     #testimonios { height: auto; padding: 100px 0; }
     .testimonials-sticky-wrapper { position: relative; height: auto; display: block; }
@@ -1777,8 +1778,9 @@ details[open] .icon-toggle {
     from { opacity: 0; transform: translateX(50px); }
     to { opacity: 1; transform: translateX(0); }
 }
+/* #endregion*/
 
-/* RESPONSIVE */
+/*  #region ----------------------------RESPONSIVE FAQ */
 @media (max-width: 900px) {
     .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
     
