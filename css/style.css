@@ -752,7 +752,7 @@ transform: translateY(-6px) rotate(45deg); background-color: var(--white);
         gap: 1.5rem;
         text-align: center; 
         width: 100%;
-        padding-top: 2rem;
+        padding-top: 1rem;
     }
 
     /* Ajustes de Imagen */
